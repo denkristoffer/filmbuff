@@ -1,0 +1,17 @@
+== 0.1.0 2011-02-28
+
+* major enhancements
+	* Rewrote most things and refactored everything.
+
+== 0.0.2 2010-09-30
+
+* major enhancements
+  * Added RSpec tests
+
+* minor enhancements
+  * Renamed "HISTORY" to "History"
+
+== 0.0.1 2010-09-06
+
+* major enhancements
+  * Alpha release - Code needs to be cleaned up before 0.1.0
