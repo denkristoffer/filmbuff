@@ -51,4 +51,4 @@ Fork the project, implement your feature in its own branch, and send
 a pull request.
 
 ### Contributors
-- Jon Maddox (https://github.com/maddox) inspired the 0.1.0 rewrite with the imdb_party gem.
+- Jon Maddox (https://github.com/maddox) inspired the 0.1.0 rewrite through the imdb_party gem.
