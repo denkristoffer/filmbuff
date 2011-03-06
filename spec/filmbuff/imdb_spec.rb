@@ -1,10 +1,8 @@
-# encoding: utf-8
-$:.push File.expand_path("../../../lib", __FILE__)
-require "filmbuff"
+require File.expand_path(File.join(File.dirname(__FILE__), '../spec_helper'))
 
-describe Filmbuff::IMDb do
-  before :all do
-    @imdb = Filmbuff::IMDb.new
+describe FilmBuff::IMDb do
+  before(:all) do
+    @imdb = FilmBuff::IMDb.new
   end
 
   describe "#locale" do
@@ -15,11 +13,6 @@ describe Filmbuff::IMDb do
 
   describe "#locale=" do
     context "given valid locale" do
-      it "does not raise an exception" do
-        lambda { @imdb.locale = "fr_FR" }.should_not
-          raise_error(Filmbuff::IMDbInvalidLocale)
-      end
-
       it "sets locale to the given value" do
         @imdb.locale = "de_DE"
         @imdb.locale.should == "de_DE"
@@ -28,62 +21,30 @@ describe Filmbuff::IMDb do
 
     context "given invalid locale" do
       it "raises an exception" do
-        lambda { @imdb.locale = "da_DK" }.should
-          raise_error(Filmbuff::IMDbInvalidLocale)
+        lambda { @imdb.locale = "da_DK" }.should raise_error StandardError
       end
     end
   end
 
-  describe "#request" do
-    context "given \"/hello\" function" do
-      context "given valid arguments" do
-        before :all do
-          @arguments = {
-            "system_name" => "iPhone OS",
-            "system_version" => "3.1.2"
-          }
-        end
-
-        it "returns \"ok\" as status" do
-          status = @imdb.request("/hello", @arguments)
-          status["data"]["status"].should == "ok"
-        end
-
-        it "does not raise an exception" do
-          lambda { @imdb.request("/hello", @arguments) }.should_not
-            raise_error(Filmbuff::IMDbRequestError)
-        end
+  describe "#find_by_id" do
+    context "given valid ID" do
+      before(:all) do
+        @title = @imdb.find_by_id("tt0032138")
       end
 
-      context "given a wrong argument type" do
-        context "given an integer" do
-          it "raises an exception" do
-            lambda { @imdb.request("/hello", 1) }.should
-              raise_error(Filmbuff::IMDbInvalidArgument)
-          end
-        end
-
-        context "given a string" do
-          it "raises an exception" do
-            lambda { @imdb.request("/hello", "string") }.should
-              raise_error(Filmbuff::IMDbInvalidArgument)
-          end
-        end
-
-        context "given an array" do
-          it "raises an exception" do
-            lambda { @imdb.request("/hello", %q{a b}) }.should
-              raise_error(Filmbuff::IMDbInvalidArgument)
-          end
-        end
+      it "returns a Title" do
+        @title.instance_of?(FilmBuff::Title).should be_true
       end
+    end
+  end
 
-      context "given nonexistent function" do
-        it "raises an exception" do
-          lambda { @imdb.request("/nonexistent") }.should
-            raise_error(Filmbuff::IMDbInvalidArgument)
-        end
-      end
+  describe "#find_by_title" do
+    before(:all) do
+      @title = @imdb.find_by_title("The Wizard of Oz")
+    end
+
+    it "returns a Title" do
+      @title.instance_of?(FilmBuff::Title).should be_true
     end
   end
 end
