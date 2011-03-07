@@ -51,6 +51,7 @@ To retrieve information in a different language, set the instance variable local
     movie.genres => ["Abenteuer", "Komödie", "Familie", "Fantasy", "Musical"]
 
 Supported locales are
+
 - de_DE (German)
 - en_US (English) (Default)
 - es_ES (Spanish)
