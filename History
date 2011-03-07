@@ -1,3 +1,9 @@
+== 0.1.2 2011-03-07
+
+* minor enhancements
+  * Fixed locale support
+  * Added part about locale to README
+
 == 0.1.1 2011-03-06
 
 * minor enhancements
