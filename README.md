@@ -41,9 +41,26 @@ If you know the movie's IMDb ID you can get the information as well:
     movie.rating => 8.3
     movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
 
+To retrieve information in a different language, set the instance variable locale to your wanted locale:
+
+    imdb.locale = "de_DE"
+    movie = imdb.find_by_id("tt0032138")
+    
+    movie.title => "Das zauberhafte Land"
+    movie.rating => 8.3
+    movie.genres => ["Abenteuer", "Komödie", "Familie", "Fantasy", "Musical"]
+
+Supported locales are
+- de_DE (German)
+- en_US (English) (Default)
+- es_ES (Spanish)
+- fr_FR (French)
+- it_IT (Italian)
+- pt_PT (Portuguese)
+
 ## Authors
 
-* [Kristoffer Sachse](http://github.com/sachse)
+* [Kristoffer Sachse](https://github.com/sachse)
 
 ## Contribute
 
