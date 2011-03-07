@@ -12,29 +12,19 @@ describe FilmBuff::IMDb do
   end
 
   describe "#locale=" do
-    context "given valid locale" do
-      it "sets locale to the given value" do
-        @imdb.locale = "de_DE"
-        @imdb.locale.should == "de_DE"
-      end
-    end
-
-    context "given invalid locale" do
-      it "raises an exception" do
-        lambda { @imdb.locale = "da_DK" }.should raise_error StandardError
-      end
+    it "sets locale to the given value" do
+      @imdb.locale = "de_DE"
+      @imdb.locale.should == "de_DE"
     end
   end
 
   describe "#find_by_id" do
-    context "given valid ID" do
-      before(:all) do
-        @title = @imdb.find_by_id("tt0032138")
-      end
+    before(:all) do
+      @title = @imdb.find_by_id("tt0032138")
+    end
 
-      it "returns a Title" do
-        @title.instance_of?(FilmBuff::Title).should be_true
-      end
+    it "returns a Title" do
+      @title.instance_of?(FilmBuff::Title).should be_true
     end
   end
 

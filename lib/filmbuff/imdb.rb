@@ -1,6 +1,7 @@
 module FilmBuff
   class IMDb
-    attr_reader :locale
+    # locale can be "de_DE", "en_US", "es_ES", "fr_FR", "it_IT" or "pt_PT"
+    attr_accessor :locale
 
     include HTTParty
     include HTTParty::Icebox
@@ -20,17 +21,6 @@ module FilmBuff
     end
 
     public
-    def locale=(locale)
-      locales = %w[ de_DE en_US es_ES fr_FR it_IT pt_PT ]
-
-      if locales.include? locale
-        @locale = locale
-      else
-        raise "Unknown locale. Only the following are allowed:\n" <<
-        locales.join(", ")
-      end
-    end
-
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
         tconst: imdb_id
