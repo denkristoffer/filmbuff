@@ -20,7 +20,7 @@ Alternatively you can check out the latest code directly from Github
 
 ## Usage
 
-Film Buff 0.1.0 provides two easy ways to return an object with information on a movie or TV show. First, set up an IMDb instance:
+Film Buff 0.1.x provides two easy ways to return an object with information on a movie or TV show. First, set up an IMDb instance:
 
     require 'filmbuff'
     imdb = FilmBuff::IMDb.new

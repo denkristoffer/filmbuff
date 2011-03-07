@@ -14,7 +14,6 @@ describe FilmBuff::IMDb do
   describe "#locale=" do
     it "sets locale to the given value" do
       @imdb.locale = "de_DE"
-      @imdb.locale.should == "de_DE"
     end
   end
 
