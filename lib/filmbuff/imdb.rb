@@ -21,14 +21,14 @@ module FilmBuff
     public
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
-        tconst: imdb_id, locale: @locale
+        :tconst => imdb_id, :locale => @locale
       }).parsed_response
       Title.new(result["data"])
     end
 
     def find_by_title(title)
       results = self.class.get('/find', :query => {
-        q: title, locale: @locale
+        :q => title, :locale => @locale
       }).parsed_response
       find_by_id(results["data"]["results"][0]["list"][0]["tconst"])
     end
