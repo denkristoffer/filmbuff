@@ -22,13 +22,13 @@ describe FilmBuff::Title do
     end
 
     it "has a plot" do
-      @title.plot.should == "Dorothy Gale is swept away to a magical land in " <<
-      "a tornado and embarks on a quest to see the Wizard who can help her " <<
+      @title.plot.should == "Dorothy Gale is swept away to a magical land in" <<
+      " a tornado and embarks on a quest to see the Wizard who can help her " <<
       "return home."
     end
 
     it "has a runtime" do
-      @title.runtime.should == "101 min"
+      @title.runtime.should == 6060
     end
 
     it "has a rating" do
@@ -44,7 +44,7 @@ describe FilmBuff::Title do
     end
 
     it "has genres" do
-      @title.genres.should == %w[ Adventure Comedy Family Fantasy Musical]
+      @title.genres.should == %w[ Adventure Comedy Family Fantasy Musical ]
     end
 
     it "has a release date" do

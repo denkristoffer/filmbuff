@@ -1,6 +1,6 @@
 module FilmBuff
   class Title
-    attr_accessor :imdb_id, :title, :tagline, :plot, :runtime, :rating, :votes,
+    attr_reader :imdb_id, :title, :tagline, :plot, :runtime, :rating, :votes,
       :poster_url, :genres, :release_date
 
     def initialize(options = {})
@@ -8,8 +8,7 @@ module FilmBuff
       @title = options["title"]
       @tagline = options["tagline"]
       @plot = options["plot"]["outline"] if options["plot"]
-      @runtime = "#{(options["runtime"]["time"]/60).to_i} min" if
-        options["runtime"]
+      @runtime = options["runtime"]["time"] if options["runtime"]
       @rating = options["rating"]
       @votes = options["num_votes"]
       @poster_url = options["image"]["url"] if options["image"]
