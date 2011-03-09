@@ -1,8 +1,13 @@
-== 0.1.3
+== 0.1.5
+
+* major enhancements
+  * Ruby 1.8.x support. Only tested with 1.8.7-p334 but it should work with
+    versions below as well.
+  * Changed runtime format. Now returns the length in seconds rather than 
+    minutes, allowing greater customization.
 
 * minor enhancements
-  * Changed runtime format. Now returns the length in seconds rather than 
-    minutes, so it's more easily customized.
+  * Removed redundant Rspec tests.
 
 == 0.1.2 2011-03-07
 
