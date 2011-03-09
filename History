@@ -3,6 +3,7 @@
 * major enhancements
   * Ruby 1.8.x support. Only tested with 1.8.7-p334 but it should work with
     versions below as well.
+  * Use the new HTTParty-Icebox gem instead of vendoring the code for caching.
   * Changed runtime format. Now returns the length in seconds rather than 
     minutes, allowing greater customization.
 
