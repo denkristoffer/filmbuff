@@ -4,7 +4,7 @@ module FilmBuff
 
     include HTTParty
     include HTTParty::Icebox
-    cache :store => 'file', :timeout => 120, :location => Dir.tmpdir
+    cache :store => 'memory', :timeout => 120
 
     base_uri 'app.imdb.com'
     default_params = {
