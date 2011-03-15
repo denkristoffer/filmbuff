@@ -5,19 +5,6 @@ describe FilmBuff::IMDb do
     @imdb = FilmBuff::IMDb.new
   end
 
-  describe "#locale" do
-    it "returns the locale" do
-      @imdb.locale.should == "en_US"
-    end
-  end
-
-  describe "#locale=" do
-    it "sets locale to the given value" do
-      @imdb.locale = "de_DE"
-      @imdb.locale.should == "de_DE"
-    end
-  end
-
   describe "#find_by_id" do
     before(:all) do
       @title = @imdb.find_by_id("tt0032138")

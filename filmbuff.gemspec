@@ -14,13 +14,11 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "filmbuff"
 
-  s.required_ruby_version = ">= 1.9.2"
-
-  s.add_dependency("httparty", "0.7.4")
-
-  s.add_development_dependency("rspec", "2.5.0")
+  s.add_dependency("httparty", "~> 0.7.4")
+  s.add_dependency("httparty-icebox", "~> 0.0.1")
+  s.add_development_dependency("rspec", "~> 2.5.0")
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   s.require_paths = ["lib"]
 end

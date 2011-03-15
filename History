@@ -1,3 +1,16 @@
+== 0.1.5
+
+* major enhancements
+  * Ruby 1.8.x support. Only tested with 1.8.7-p334 but it should work with
+    versions below as well. I don't intend to test with 1.8.x again, so consider
+    yourself warned.
+  * Use the new HTTParty-Icebox gem instead of vendoring the code.
+  * Changed runtime format. Now returns the length in seconds rather than 
+    minutes, allowing greater customization.
+
+* minor enhancements
+  * Removed redundant Rspec tests.
+
 == 0.1.2 2011-03-07
 
 * minor enhancements
