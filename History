@@ -1,4 +1,4 @@
-== 0.1.5
+== 0.1.5 2011-03-15
 
 * major enhancements
   * Ruby 1.8.x support. Only tested with 1.8.7-p334 but it should work with
