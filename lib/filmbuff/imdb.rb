@@ -7,12 +7,6 @@ module FilmBuff
     cache :store => 'memory', :timeout => 120
 
     base_uri 'app.imdb.com'
-    default_params = {
-      "api" => "v1",
-      "app_id" => "iphone1_1",
-      "timestamp" => Time.now.utc.to_i,
-      "sig" => "app1_1"
-    }
 
     def initialize
       @locale = "en_US"
