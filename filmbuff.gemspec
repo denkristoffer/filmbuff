@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Filmbuff::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Kristoffer Sachse"]
-  s.email       = ["kristoffer@sachse.nu"]
+  s.email       = ["hello@kristoffer.is"]
   s.homepage    = "https://github.com/sachse/filmbuff"
   s.summary     = %q{A Ruby wrapper for IMDb's JSON API}
   s.description = %q{Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and easiest way to get information from IMDb.}
