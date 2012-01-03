@@ -3,7 +3,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '../spec_helper'))
 
 describe FilmBuff::Title do
   context "given no locale" do
-    before(:all) do
+    before :all do
       @imdb = FilmBuff::IMDb.new
       @title = @imdb.find_by_id("tt0032138")
     end
@@ -53,12 +53,12 @@ describe FilmBuff::Title do
   end
 
   context "given locale" do
-    before(:all) do
+    before :all do
       @imdb = FilmBuff::IMDb.new
     end
 
     context "\"de_DE\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "de_DE"
         @title = @imdb.find_by_id("tt0032138")
       end
@@ -69,7 +69,7 @@ describe FilmBuff::Title do
     end
 
     context "\"en_US\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "en_US"
         @title = @imdb.find_by_id("tt0032138")
       end
@@ -80,7 +80,7 @@ describe FilmBuff::Title do
     end
 
     context "\"es_ES\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "es_ES"
         @title = @imdb.find_by_id("tt0032138")
       end
@@ -91,7 +91,7 @@ describe FilmBuff::Title do
     end
 
     context "\"fr_FR\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "fr_FR"
         @title = @imdb.find_by_id("tt0032138")
       end
@@ -102,7 +102,7 @@ describe FilmBuff::Title do
     end
 
     context "\"it_IT\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "it_IT"
         @title = @imdb.find_by_id("tt0032138")
       end
@@ -113,7 +113,7 @@ describe FilmBuff::Title do
     end
 
     context "\"pt_PT\"" do
-      before(:all) do
+      before :all do
         @imdb.locale = "pt_PT"
         @title = @imdb.find_by_id("tt0032138")
       end
