@@ -44,7 +44,7 @@ describe FilmBuff::Title do
     end
 
     it "has genres" do
-      @title.genres.should == %w[ Adventure Comedy Family Fantasy Musical ]
+      @title.genres.should == %w[ Adventure Family Fantasy Musical ]
     end
 
     it "has a release date" do
