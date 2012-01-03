@@ -3,5 +3,4 @@
 Gemfile.lock
 pkg/*
 .DS_Store
-.rspec
-bundle/
+vendor/
