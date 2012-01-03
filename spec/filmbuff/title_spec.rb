@@ -68,6 +68,17 @@ describe FilmBuff::Title do
       end
     end
 
+    context "\"en_US\"" do
+      before(:all) do
+        @imdb.locale = "en_US"
+        @title = @imdb.find_by_id("tt0032138")
+      end
+
+      it "returns English information" do
+        @title.title.should == "The Wizard of Oz"
+      end
+    end
+
     context "\"es_ES\"" do
       before(:all) do
         @imdb.locale = "es_ES"
