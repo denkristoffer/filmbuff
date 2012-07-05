@@ -4,6 +4,8 @@
 
 Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and easiest way to get information from IMDb.
 
+Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#Locales).
+
 ## Installation
 
 ### RubyGems
@@ -55,6 +57,8 @@ If you know the movie's IMDb ID you can get the information as well:
     movie.title => "The Wizard of Oz"
     movie.rating => 8.3
     movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
+
+#### Locales
 
 To retrieve information in a different language, set the instance variable locale to your wanted locale:
 
