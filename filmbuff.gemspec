@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "filmbuff"
 
-  s.add_dependency("httparty", "~> 0.7.8")
-  s.add_dependency("httparty-icebox", "~> 0.0.3")
-  s.add_development_dependency("rspec", "~> 2.7.0")
+  s.add_dependency("httparty", "~> 0.8.3")
+  s.add_dependency("httparty-icebox", "~> 0.0.4")
+  s.add_development_dependency("rspec", "~> 2.10.0")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
