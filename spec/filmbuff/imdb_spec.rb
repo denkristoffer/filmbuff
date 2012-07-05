@@ -6,23 +6,23 @@ describe FilmBuff::IMDb do
       @imdb = FilmBuff::IMDb.new
     end
 
-    describe "#find_by_id" do
+    describe '#find_by_id' do
       before :all do
-        @title = @imdb.find_by_id("tt0032138")
+        @title = @imdb.find_by_id('tt0032138')
       end
 
-      it "returns a Title" do
+      it 'returns a Title' do
         @title.instance_of?(FilmBuff::Title).should be_true
       end
     end
 
-    describe "#find_by_title" do
-      before :all do
-        @title = @imdb.find_by_title("The Wizard of Oz")
-      end
+    describe '#find_by_title' do
+        before :all do
+          @title = @imdb.find_by_title('The Wizard of Oz')
+        end
 
-      it "returns a Title" do
-        @title.instance_of?(FilmBuff::Title).should be_true
+        it 'returns a Title' do
+          @title.instance_of?(FilmBuff::Title).should be_true
       end
     end
   end
