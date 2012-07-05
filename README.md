@@ -20,7 +20,7 @@ Alternatively you can check out the latest code directly from Github
 
 ## Usage
 
-Accessible title information is:
+Accessible information for a title retrieved from IMDb is:
 
 - Title
 - Tagline
