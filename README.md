@@ -80,7 +80,7 @@ Supported locales are
 
 ## Contribute
 
-Fork the project, implement your changes in it's own branch, and send
+Fork the project, implement your changes in its own branch, and send
 a pull request to me. I'll gladly consider any help or ideas.
 
 ### Contributors
