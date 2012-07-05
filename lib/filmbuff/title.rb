@@ -13,7 +13,7 @@ module FilmBuff
       @votes = options["num_votes"]
       @poster_url = options["image"]["url"] if options["image"]
       @genres = options["genres"] || []
-      @release_date = options["release_date"]["normal"]
+      @release_date = Date.strptime(options["release_date"]["normal"], '%Y-%m-%d')
     end
   end
 end
