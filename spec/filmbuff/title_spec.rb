@@ -36,7 +36,7 @@ describe FilmBuff::Title do
     end
 
     it "has an amount of votes" do
-      @title.votes.should be_a(Integer)
+      @title.votes.should be_an(Integer)
     end
 
     it "has a poster URL" do
