@@ -17,8 +17,7 @@ describe FilmBuff::Title do
     end
 
     it "has a tagline" do
-      @title.tagline.should == "\"The Wizard\" Musical Returns By " <<
-      "Unprecedented Demand! [UK re-release]"
+      @title.tagline.should == "Mighty Miracle Show Of 1000 Delights !"
     end
 
     it "has a plot" do
