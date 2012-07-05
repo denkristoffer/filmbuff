@@ -48,7 +48,7 @@ describe FilmBuff::Title do
     end
 
     it "has a release date" do
-      @title.release_date.should == DateTime.parse("1939-08-25")
+      @title.release_date.should == DateTime.strptime('1939-08-25', '%Y-%m-%d')
     end
   end
 
