@@ -25,7 +25,8 @@ module FilmBuff
       results = self.class.get('/find', :query => {
         :q => title, :locale => @locale
       }).parsed_response
-      find_by_id(results["data"]["results"][0]["list"][0]["tconst"])
+      
+      find_by_id(results['title_popular'][0]['id'])
     end
   end
 end
