@@ -17,12 +17,14 @@ describe FilmBuff::IMDb do
     end
 
     describe '#find_by_title' do
+      context 'given no limit' do
         before :all do
           @title = @imdb.find_by_title('The Wizard of Oz')
         end
 
         it 'returns a Title' do
           @title.instance_of?(FilmBuff::Title).should be_true
+        end
       end
     end
   end

@@ -17,7 +17,8 @@ module FilmBuff
       result = self.class.get('/title/maindetails', :query => {
         :tconst => imdb_id, :locale => @locale
       }).parsed_response
-      Title.new(result["data"])
+      
+      Title.new(result['data'])
     end
 
     def find_by_title(title)
