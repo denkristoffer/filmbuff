@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency("httparty", "~> 0.8.3")
   s.add_dependency("httparty-icebox", "~> 0.0.4")
-  s.add_development_dependency("rspec", "~> 2.10.0")
+
+  s.add_development_dependency("minitest", "~> 3.2.0")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
