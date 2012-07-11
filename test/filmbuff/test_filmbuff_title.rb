@@ -49,7 +49,7 @@ describe FilmBuff::Title do
     end
 
     it 'has a release date' do
-      assert_equal(DateTime.strptime('1939-08-25', '%Y-%m-%d'),
+      assert_equal(Date.strptime('1939-08-25', '%Y-%m-%d'),
         @title.release_date)
     end
   end
