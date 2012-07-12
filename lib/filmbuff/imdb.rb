@@ -6,7 +6,7 @@ module FilmBuff
     include HTTParty::Icebox
     cache :store => 'memory', :timeout => 120
 
-    base_uri 'app.imdb.com'
+    base_uri 'https://app.imdb.com'
 
     def initialize
       @locale = "en_US"
