@@ -12,6 +12,7 @@ module FilmBuff
       @locale = options[:locale] || 'en_US'
       @store = options[:cache] || 'memory'
       @timeout = options[:cache_timeout] || 120
+      self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
     cache :store => @store, :timeout => @timeout
