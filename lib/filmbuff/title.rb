@@ -1,7 +1,7 @@
 module FilmBuff
   class Title
     attr_reader :imdb_id, :title, :tagline, :plot, :runtime, :rating, :votes,
-      :poster_url, :genres, :release_date
+                :poster_url, :genres, :release_date
 
     def initialize(options = {})
       @imdb_id = options['tconst']
