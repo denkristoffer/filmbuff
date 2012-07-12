@@ -4,7 +4,6 @@ module FilmBuff
 
     include HTTParty
     include HTTParty::Icebox
-    cache :store => 'memory', :timeout => 120
 
     base_uri 'https://app.imdb.com'
     format :json
@@ -14,6 +13,8 @@ module FilmBuff
       @store = options[:cache] || 'memory'
       @timeout = options[:cache_timeout] || 120
     end
+
+    cache :store => @store, :timeout => @timeout
 
     public
     def find_by_id(imdb_id)
