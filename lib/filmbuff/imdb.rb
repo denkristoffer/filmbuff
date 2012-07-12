@@ -9,8 +9,10 @@ module FilmBuff
     base_uri 'https://app.imdb.com'
     format :json
 
-    def initialize
-      @locale = "en_US"
+    def initialize(options = {})
+      @locale = options[:locale] || 'en_US'
+      @store = options[:cache] || 'memory'
+      @timeout = options[:cache_timeout] || 120
     end
 
     public
