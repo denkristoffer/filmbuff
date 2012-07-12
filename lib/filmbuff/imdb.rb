@@ -7,6 +7,7 @@ module FilmBuff
     cache :store => 'memory', :timeout => 120
 
     base_uri 'https://app.imdb.com'
+    format :json
 
     def initialize
       @locale = "en_US"
