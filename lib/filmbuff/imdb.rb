@@ -25,12 +25,39 @@ module FilmBuff
       Title.new(result['data'])
     end
 
-    def find_by_title(title)
-      results = self.class.get('/find', :query => {
-        :q => title, :locale => @locale
+    def find_by_title(title, options = {})
+      options = {
+        limit: nil,
+        types: %w(title_popular title_exact title_approx title_substring)
+      }.merge!(options)
+
+      result = self.class.get('http://www.imdb.com/xml/find', :query => {
+        :q => title,
+        :json => '1',
+        :tt => 'on'
       }).parsed_response
-      
-      find_by_id(results['title_popular'][0]['id'])
+
+      results = []
+
+      options[:types].each do |key|
+        if result[key]
+          result[key].each do |row|
+            break unless results.size < options[:limit] if options[:limit]
+            next unless row['id'] && row['title'] && row['description']
+
+            title = {
+              type: key,
+              imdb_id: row['id'],
+              title: row['title'],
+              release_year: row['description'].scan(/\A\d{4}/).first
+            }
+
+            results << title
+          end
+        end
+      end
+
+      results
     end
   end
 end
