@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency("minitest", "~> 3.2.0")
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
+  s.test_files    = `git ls-files -- {test}/*`.split("\n")
   s.require_paths = ["lib"]
 end
