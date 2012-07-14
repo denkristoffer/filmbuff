@@ -41,7 +41,7 @@ describe FilmBuff::Title do
     end
 
     it 'has a poster URL' do
-      assert_match(%r{http://ia.media-imdb.com/images/.*/}, @title.poster_url)
+      assert_match(%r{\Ahttp://ia.media-imdb.com/images/.*/}, @title.poster_url)
     end
 
     it 'has genres' do
