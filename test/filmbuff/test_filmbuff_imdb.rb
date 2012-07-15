@@ -11,7 +11,7 @@ describe FilmBuff::IMDb do
     end
 
     it 'returns a Title' do
-      assert_instance_of(FilmBuff::Title, @title)
+      assert_instance_of FilmBuff::Title, @title
     end
   end
 
@@ -22,7 +22,7 @@ describe FilmBuff::IMDb do
       end
 
       it 'returns an array of titles' do
-        assert_instance_of(Array, @title)
+        assert_instance_of Array, @title
       end
     end
 
@@ -32,18 +32,18 @@ describe FilmBuff::IMDb do
       end
 
       it 'returns 3 results' do
-        assert_equal(3, @title.size)
+        assert_equal 3, @title.size
       end
     end
 
     describe 'when only returning popular titles' do
       before do
-        @title = @imdb.find_by_title('The Wizard of Oz',
-                                     types: %w(title_popular))
+        @title = @imdb.find_by_title 'The Wizard of Oz',
+                                     types: %w(title_popular)
       end
 
       it 'returns the 1939 version' do
-        assert_equal('1939', @title.first[:release_year])
+        assert_equal '1939', @title.first[:release_year]
       end
     end
   end
