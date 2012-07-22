@@ -4,21 +4,31 @@
 
 Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and easiest way to get information from IMDb.
 
-Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#Locales).
+Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#locales).
 
 ## Installation
+
+### Bundler
+
+You can install Film Buff with Bundler simply by adding it to your Gemfile
+
+    gem 'filmbuff'
+
+Bundler will install the gem when you use the `bundle install` command
+
+    $ bundle install
 
 ### RubyGems
 
 You can install the latest Film Buff gem using RubyGems
 
-    gem install filmbuff
+    $ gem install filmbuff
 
 ### GitHub
 
 Alternatively you can check out the latest code directly from Github
 
-    git clone http://github.com/sachse/filmbuff.git
+    $ git clone http://github.com/sachse/filmbuff.git
 
 ## Usage
 
@@ -45,7 +55,7 @@ Film Buff 0.1.x provides two easy ways to return an object with information on a
 You can then find a movie by its title. This will return the first result from IMDb's search feature:
 
     movie = imdb.find_by_title("The Wizard of Oz")
-    
+
     movie.title => "The Wizard of Oz"
     movie.rating => 8.3
     movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
@@ -53,7 +63,7 @@ You can then find a movie by its title. This will return the first result from I
 If you know the movie's IMDb ID you can get the information as well:
 
     movie = imdb.find_by_id("tt0032138")
-    
+
     movie.title => "The Wizard of Oz"
     movie.rating => 8.3
     movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
@@ -64,7 +74,7 @@ To retrieve information in a different language, set the instance variable local
 
     imdb.locale = "de_DE"
     movie = imdb.find_by_id("tt0032138")
-    
+
     movie.title => "Das zauberhafte Land"
     movie.rating => 8.3
     movie.genres => ["Abenteuer", "Komödie", "Familie", "Fantasy", "Musical"]
