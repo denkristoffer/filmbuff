@@ -28,7 +28,7 @@ You can install the latest Film Buff gem using RubyGems
 
 Alternatively you can check out the latest code directly from Github
 
-    $ git clone http://github.com/sachse/filmbuff.git
+    $ git clone https://github.com/sachse/filmbuff.git
 
 ## Usage
 
