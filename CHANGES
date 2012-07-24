@@ -1,40 +1,48 @@
-== 0.1.5 2011-03-15
+=== 0.1.5 / 2011-03-15
 
-* major enhancements
+* 3 major enhancements
+
   * Ruby 1.8.x support. Only tested with 1.8.7-p334 but it should work with
     versions below as well. I don't intend to test with 1.8.x again, so consider
     yourself warned.
   * Use the new HTTParty-Icebox gem instead of vendoring the code.
-  * Changed runtime format. Now returns the length in seconds rather than 
+  * Changed runtime format. Now returns the length in seconds rather than
     minutes, allowing greater customization.
 
-* minor enhancements
+* 1 minor enhancement
+
   * Removed redundant Rspec tests.
 
-== 0.1.2 2011-03-07
+=== 0.1.2 / 2011-03-07
 
-* minor enhancements
+* 2 minor enhancements
+
   * Fixed locale support
   * Added part about locale to README
 
-== 0.1.1 2011-03-06
+=== 0.1.1 / 2011-03-06
 
-* minor enhancements
+* 1 minor enhancement
+
   * Included "Readme.markdown" in released gem.
 
-== 0.1.0 2011-03-06
+=== 0.1.0 / 2011-03-06
 
-* major enhancements
+* 2 major enhancements
+
   * Rewrote everything from the ground up. A lot of unnecessary functionality
     has been removed.
   * Added RSpec tests
 
-== 0.0.2 2010-09-30
+=== 0.0.2 / 2010-09-30
 
-* minor enhancements
+* 1 minor enhancement
+
   * Renamed "HISTORY" to "History"
 
-== 0.0.1 2010-09-06
+=== 0.0.1 / 2010-09-06
+
+* 1 major enhancement
 
 * major enhancements
   * Alpha release - Code needs to be cleaned up before 0.1.0
