@@ -47,7 +47,7 @@ If you know the movie's IMDb ID you can return an object with the IMDb informati
     movie.rating => 8.3
     movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
 
-Accessible information for an object returned from `find_by_id` is:
+Accessible information for an object returned by `find_by_id` is:
 
 - Title
 - Tagline
