@@ -54,7 +54,7 @@ describe FilmBuff::Title do
   end
 
   describe 'given locale' do
-    describe '"de_DE"' do
+    describe 'de_DE' do
       before do
         @imdb.locale = 'de_DE'
         @title = @imdb.find_by_id('tt0032138')
@@ -65,7 +65,7 @@ describe FilmBuff::Title do
       end
     end
 
-    describe '"en_US"' do
+    describe 'en_US' do
       before do
         @imdb.locale = 'en_US'
         @title = @imdb.find_by_id('tt0032138')
@@ -76,7 +76,7 @@ describe FilmBuff::Title do
       end
     end
 
-    describe '"es_ES"' do
+    describe 'es_ES' do
       before do
         @imdb.locale = 'es_ES'
         @title = @imdb.find_by_id('tt0032138')
@@ -87,7 +87,7 @@ describe FilmBuff::Title do
       end
     end
 
-    describe '"fr_FR"' do
+    describe 'fr_FR' do
       before do
         @imdb.locale = 'fr_FR'
         @title = @imdb.find_by_id('tt0032138')
@@ -98,7 +98,7 @@ describe FilmBuff::Title do
       end
     end
 
-    describe '"it_IT"' do
+    describe 'it_IT' do
       before do
         @imdb.locale = 'it_IT'
         @title = @imdb.find_by_id('tt0032138')
@@ -109,7 +109,7 @@ describe FilmBuff::Title do
       end
     end
 
-    describe '"pt_PT"' do
+    describe 'pt_PT' do
       before do
         @imdb.locale = 'pt_PT'
         @title = @imdb.find_by_id('tt0032138')
