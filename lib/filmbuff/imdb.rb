@@ -12,7 +12,6 @@ module FilmBuff
 
     def initialize(options = {})
       @locale = options[:locale] || 'en_US'
-      @legacy_mode = options[:legacy_mode] || false
       self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
@@ -57,10 +56,6 @@ module FilmBuff
             results << title
           end
         end
-      end
-
-      if @legacy_mode
-        results = self.find_by_id(results.first[:imdb_id])
       end
 
       results
