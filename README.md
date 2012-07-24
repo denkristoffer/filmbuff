@@ -32,7 +32,24 @@ Alternatively you can check out the latest code directly from Github
 
 ## Usage
 
-Accessible information for a title retrieved from IMDb is:
+### Examples
+
+Film Buff 0.2.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
+
+    require 'filmbuff'
+    imdb = FilmBuff::IMDb.new
+
+#### find_by_id
+
+If you know the movie's IMDb ID you can return an object with the IMDb information:
+
+    movie = imdb.find_by_id('tt0032138')
+
+    movie.title => "The Wizard of Oz"
+    movie.rating => 8.3
+    movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
+
+Accessible information for an object returned from `find_by_id` is:
 
 - Title
 - Tagline
@@ -45,39 +62,100 @@ Accessible information for a title retrieved from IMDb is:
 - Release date
 - IMDb ID
 
-### Examples
+#### find_by_title
 
-Film Buff 0.1.x provides two easy ways to return an object with information on a movie or TV show. First, set up an IMDb instance:
+You can then search for a movie by its title. This will return an array with results from IMDb's search feature:
 
-    require 'filmbuff'
-    imdb = FilmBuff::IMDb.new
+    results = imdb.find_by_title('The Wizard of Oz')
 
-You can then find a movie by its title. This will return the first result from IMDb's search feature:
+    results => [
+                    {
+                        :type=>"title_popular",
+                        :imdb_id=>"tt0032138",
+                        :title=>"The Wizard of Oz",
+                        :release_year=>"1939"
+                    },
 
-    movie = imdb.find_by_title("The Wizard of Oz")
+                    {
+                        :type=>"title_exact",
+                        :imdb_id=>"tt0016544",
+                        :title=>"The Wizard of Oz",
+                        :release_year=>"1925"
+                    },
+
+                    {
+                        :type=>"title_exact",
+                        :imdb_id=>"tt0001463",
+                        :title=>"The Wonderful Wizard of Oz",
+                        :release_year=>"1910"
+                    },
+
+                    etc.
+               ]
+
+This behavior is different from Film Buff 0.1.x which returned a single object when searching by title, the same way `find_by_id` does. This was changed due to a change in IMDb's API and the fact that the new solution offers more flexibility. However, if you'd like to use the old method you still can, see [Configuration](#configuration).
+
+`find_by_title` takes an option hash where you can set the following options
+
+- limit
+- types
+
+`limit` limits the amount of results returned.
+`types` decides the types of titles IMDb will search. Valid settings are:
+
+- title_popular
+- title_exact
+- title_approx
+- title_substring
+
+These can be passed in an array inside the hash.
+
+    results = imdb.find_by_title('The Wizard of Oz', types: %w(title_popular))
+
+    results => [
+                    {
+                        :type=>"title_popular",
+                        :imdb_id=>"tt0032138",
+                        :title=>"The Wizard of Oz",
+                        :release_year=>"1939"
+                    }
+                ]
+
+### Configuration
+
+Film Buff offers three configuration settings:
+
+- locale
+- legacy_mode
+- ssl
+
+`ssl` is used by default, but it can be disabled when setting up an instance of FilmBuff::IMDb by passing a hash with configuration options.
+
+    imdb = FilmBuff::IMDb.new({ ssl: false })
+
+`locale` and `legacy_mode` can also be set in this a hash, but these options can also be changed when necessary during runtime by changing the instance variables value.
+
+`legacy_mode` offers functionality similar to Film Buff 0.1.x by returning a single object when searching for a movie by title.
+
+    imdb.legacy_mode = true
+    movie.find_by_title('The Wizard of Oz')
 
     movie.title => "The Wizard of Oz"
     movie.rating => 8.3
-    movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
+    movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
 
-If you know the movie's IMDb ID you can get the information as well:
-
-    movie = imdb.find_by_id("tt0032138")
-
-    movie.title => "The Wizard of Oz"
-    movie.rating => 8.3
-    movie.genres => ["Adventure", "Comedy", "Family", "Fantasy", "Musical"]
+This is essentially the same as setting `limit: 1` for `find_by_title`.
 
 #### Locales
 
-To retrieve information in a different language, set the instance variable locale to your wanted locale:
+To retrieve information in a different language, either pass locale in the options hash when setting up the `imdb` instance or set the instance variable locale to your wanted locale once the instance has already been created:
 
-    imdb.locale = "de_DE"
-    movie = imdb.find_by_id("tt0032138")
+    imdb.locale = 'de_DE'
+    movie = imdb.find_by_id('tt0032138')
 
     movie.title => "Das zauberhafte Land"
     movie.rating => 8.3
-    movie.genres => ["Abenteuer", "Komödie", "Familie", "Fantasy", "Musical"]
+    movie.genres => ["Abenteuer", "Familie", "Fantasy", "Musical"]
 
 Supported locales are
 
@@ -90,12 +168,11 @@ Supported locales are
 
 ## Authors
 
-* [Kristoffer Sachse](https://github.com/sachse)
+- [Kristoffer Sachse](https://github.com/sachse)
 
 ## Contribute
 
-Fork the project, implement your changes in its own branch, and send
-a pull request to me. I'll gladly consider any help or ideas.
+You can contribute either with code by forking the project, implementing your changes in its own branch, and sending a pull request, or you can report issues and ideas for changes [on the issues page](https://github.com/sachse/filmbuff/issues).
 
 ### Contributors
 - [Jon Maddox](https://github.com/maddox) inspired the 0.1.0 rewrite through his imdb_party gem.
