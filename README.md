@@ -91,7 +91,7 @@ You can then search for a movie by its title. This will return an array with res
                     etc.
                ]
 
-This behavior is different from Film Buff 0.1.x which returned a single object when searching by title, the same way `find_by_id` does. This was changed due to a change in IMDb's API and the fact that the new solution offers more flexibility. However, if you'd like to use the old method you still can, see [Configuration](#configuration).
+This behavior is different from Film Buff 0.1.x which returned a single object when searching by title, the same way `find_by_id` does. This was changed due to a change in IMDb's API and the fact that the new solution offers more flexibility.
 
 `find_by_title` takes an option hash where you can set the following options
 
@@ -132,16 +132,7 @@ Film Buff offers three configuration settings:
 
     imdb = FilmBuff::IMDb.new({ ssl: false })
 
-`locale` and `legacy_mode` can also be set in this a hash, but these options can also be changed when necessary during runtime by changing the instance variables value.
-
-`legacy_mode` offers functionality similar to Film Buff 0.1.x by returning a single object when searching for a movie by title.
-
-    imdb.legacy_mode = true
-    movie.find_by_title('The Wizard of Oz')
-
-    movie.title => "The Wizard of Oz"
-    movie.rating => 8.3
-    movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
+`locale` can also be set in this a hash, but this options can also be changed as necessary during runtime by changing the instance variable value.
 
 #### Locales
 
