@@ -38,8 +38,8 @@ describe FilmBuff::IMDb do
 
     describe 'when only returning popular titles' do
       before do
-        @title = @imdb.find_by_title 'The Wizard of Oz',
-                                     types: %w(title_popular)
+        @title = @imdb.find_by_title('The Wizard of Oz',
+                                     types: %w(title_popular))
       end
 
       it 'returns the 1939 version' do
