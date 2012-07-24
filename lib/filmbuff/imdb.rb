@@ -8,15 +8,14 @@ module FilmBuff
     base_uri 'https://app.imdb.com'
     format :json
 
+    cache :store => 'memory', :timeout => 120
+
     def initialize(options = {})
       @locale = options[:locale] || 'en_US'
-      @store = options[:cache] || 'memory'
-      @timeout = options[:cache_timeout] || 120
       self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
     cache :store => @store, :timeout => @timeout
-
     public
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
