@@ -15,7 +15,6 @@ module FilmBuff
       self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
-    cache :store => @store, :timeout => @timeout
     public
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
