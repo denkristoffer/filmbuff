@@ -17,6 +17,7 @@ module FilmBuff
     end
 
     public
+
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
         :tconst => imdb_id, :locale => @locale
