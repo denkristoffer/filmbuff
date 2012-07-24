@@ -32,14 +32,12 @@ Alternatively you can check out the latest code directly from Github
 
 ## Usage
 
-### Examples
-
 Film Buff 0.2.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
 
     require 'filmbuff'
     imdb = FilmBuff::IMDb.new
 
-#### find_by_id
+### find_by_id
 
 If you know the movie's IMDb ID you can return an object with the IMDb information:
 
@@ -62,7 +60,7 @@ Accessible information for an object returned from `find_by_id` is:
 - Release date
 - IMDb ID
 
-#### find_by_title
+### find_by_title
 
 You can then search for a movie by its title. This will return an array with results from IMDb's search feature:
 
@@ -101,6 +99,7 @@ This behavior is different from Film Buff 0.1.x which returned a single object w
 - types
 
 `limit` limits the amount of results returned.
+
 `types` decides the types of titles IMDb will search. Valid settings are:
 
 - title_popular
@@ -143,8 +142,6 @@ Film Buff offers three configuration settings:
     movie.title => "The Wizard of Oz"
     movie.rating => 8.3
     movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
-
-This is essentially the same as setting `limit: 1` for `find_by_title`.
 
 #### Locales
 
