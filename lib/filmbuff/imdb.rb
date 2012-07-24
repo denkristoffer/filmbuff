@@ -1,6 +1,6 @@
 module FilmBuff
   class IMDb
-    attr_accessor :locale
+    attr_accessor :locale, :legacy_mode
 
     include HTTParty
     include HTTParty::Icebox
@@ -12,6 +12,7 @@ module FilmBuff
 
     def initialize(options = {})
       @locale = options[:locale] || 'en_US'
+      @legacy_mode = options[:legacy_mode] || false
       self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
@@ -37,6 +38,7 @@ module FilmBuff
       }).parsed_response
 
       results = []
+      options[:limit] = 1 if @legacy_mode
 
       options[:types].each do |key|
         if result[key]
@@ -54,6 +56,10 @@ module FilmBuff
             results << title
           end
         end
+      end
+
+      if @legacy_mode
+        results = self.find_by_id(results.first[:imdb_id])
       end
 
       results

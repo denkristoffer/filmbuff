@@ -46,5 +46,16 @@ describe FilmBuff::IMDb do
         assert_equal '1939', @title.first[:release_year]
       end
     end
+
+    describe 'when legacy_mode is on' do
+      before do
+        @imdb.legacy_mode = true
+        @title = @imdb.find_by_title 'The Wizard of Oz'
+      end
+
+      it 'returns a single FilmBuff::Title object' do
+        assert_instance_of FilmBuff::Title, @title
+      end
+    end
   end
 end
