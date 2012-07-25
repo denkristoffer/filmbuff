@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
                   'which is the fastest and easiest way to get information ' <<
                   'from IMDb.'
 
-  s.rubyforge_project = 'filmbuff'
 
   s.add_dependency('httparty', '~> 0.8.3')
   s.add_dependency('httparty-icebox', '~> 0.0.4')
