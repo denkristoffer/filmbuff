@@ -38,7 +38,6 @@ module FilmBuff
       }).parsed_response
 
       results = []
-      options[:limit] = 1 if @legacy_mode
 
       options[:types].each do |key|
         if result[key]
