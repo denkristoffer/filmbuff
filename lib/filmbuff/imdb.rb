@@ -1,6 +1,6 @@
 module FilmBuff
   class IMDb
-    attr_accessor :locale, :legacy_mode
+    attr_accessor :locale
 
     include HTTParty
     include HTTParty::Icebox
