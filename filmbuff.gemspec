@@ -5,7 +5,6 @@ require 'filmbuff/version'
 Gem::Specification.new do |s|
   s.name        = 'filmbuff'
   s.version     = FilmBuff::VERSION
-  s.platform    = Gem::Platform::RUBY
   s.authors     = ['Kristoffer Sachse']
   s.email       = ['hello@kristoffer.is']
   s.homepage    = 'https://github.com/sachse/filmbuff'
