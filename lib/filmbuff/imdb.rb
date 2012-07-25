@@ -31,6 +31,15 @@ module FilmBuff
       Title.new(result['data'])
     end
 
+    # Searches IMDb for `title` and returns an array with results.
+    #
+    # @param [String] title The title to search for.
+    # @param [Hash] options The options to search with.
+    # @option options [Integer] :limit The maximum number of results to return.
+    # @option options [Array] :types The types of possible matches to search.
+    #   The types will be searched in the provided order.
+    # @return [Array<Hash>] An array of hashes, each representing a search
+    #   result.
     def find_by_title(title, options = {})
       options = {
         limit: nil,
