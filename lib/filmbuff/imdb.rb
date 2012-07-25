@@ -17,6 +17,12 @@ module FilmBuff
 
     public
 
+    # Looks up the title with the IMDb ID `imdb_id` and returns a
+    # FilmBuff::Title object with information on that title.
+    #
+    # @param [String] imdb_id The IMDb ID for the title to look up.
+    # @return [Title] The FilmBuff::Title object containing information on the
+    #   title.
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
         :tconst => imdb_id, :locale => @locale
