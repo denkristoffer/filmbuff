@@ -6,30 +6,6 @@ Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and 
 
 Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#locales).
 
-## Installation
-
-### Bundler
-
-You can install Film Buff with Bundler simply by adding it to your Gemfile
-
-    gem 'filmbuff'
-
-Bundler will install the gem when you use the `bundle install` command
-
-    $ bundle install
-
-### RubyGems
-
-You can install the latest Film Buff gem using RubyGems
-
-    $ gem install filmbuff
-
-### GitHub
-
-Alternatively you can check out the latest code directly from Github
-
-    $ git clone https://github.com/sachse/filmbuff.git
-
 ## Usage
 
 Film Buff 0.2.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
