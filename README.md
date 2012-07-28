@@ -44,24 +44,24 @@ You can also search for a movie by its title. This will return an array with res
 
     results => [
                     {
-                        :type=>"title_popular",
-                        :imdb_id=>"tt0032138",
-                        :title=>"The Wizard of Oz",
-                        :release_year=>"1939"
+                        :type => "title_popular",
+                        :imdb_id => "tt0032138",
+                        :title => "The Wizard of Oz",
+                        :release_year => "1939"
                     },
 
                     {
-                        :type=>"title_exact",
-                        :imdb_id=>"tt0016544",
-                        :title=>"The Wizard of Oz",
-                        :release_year=>"1925"
+                        :type => "title_exact",
+                        :imdb_id => "tt0016544",
+                        :title => "The Wizard of Oz",
+                        :release_year => "1925"
                     },
 
                     {
-                        :type=>"title_exact",
-                        :imdb_id=>"tt0001463",
-                        :title=>"The Wonderful Wizard of Oz",
-                        :release_year=>"1910"
+                        :type => "title_exact",
+                        :imdb_id => "tt0001463",
+                        :title => "The Wonderful Wizard of Oz",
+                        :release_year => "1910"
                     },
 
                     etc.
@@ -87,10 +87,10 @@ These can be passed in an array inside the hash.
 
     results => [
                     {
-                        :type=>"title_popular",
-                        :imdb_id=>"tt0032138",
-                        :title=>"The Wizard of Oz",
-                        :release_year=>"1939"
+                        :type => "title_popular",
+                        :imdb_id => "tt0032138",
+                        :title => "The Wizard of Oz",
+                        :release_year => "1939"
                     }
                 ]
 
