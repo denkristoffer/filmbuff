@@ -10,6 +10,11 @@ module FilmBuff
 
     cache :store => 'memory', :timeout => 120
 
+    # @param [Hash] options Options Hash
+    # @option options [String] :locale The locale to search with. Will also
+    #   return results in the language matching the given locale
+    # @option options [Boolean] :ssl Whether or not to use SSL in search
+    #   requests
     def initialize(options = {})
       @locale = options[:locale] || 'en_US'
       self.class.base_uri 'app.imdb.com' if !options[:ssl]
