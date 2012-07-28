@@ -1,35 +1,35 @@
 module FilmBuff
   # Contains all accessible information on an IMDb title
   class Title
-    # @return [String] Returns the IMDb ID of `Title`
+    # @return [String] The IMDb ID of `Title`
     attr_reader :imdb_id
 
-    # @return [String] Returns the title of `Title`
+    # @return [String] The title of `Title`
     attr_reader :title
 
-    # @return [String] Returns the tagline of `Title`
+    # @return [String] The tagline of `Title`
     attr_reader :tagline
 
-    # @return [String] Returns the plot summary of `Title`
+    # @return [String] The plot summary of `Title`
     attr_reader :plot
 
-    # @return [Integer] Returns the runtime of `Title` in seconds
+    # @return [Integer] The runtime of `Title` in seconds
     attr_reader :runtime
 
-    # @return [Float] Returns the IMDb rating of `Title`
+    # @return [Float] The IMDb rating of `Title`
     attr_reader :rating
 
-    # @return [Integer] Returns the amount of votes that have been used to
-    #   determine the rating of `Title`
+    # @return [Integer] The amount of votes that have been used to determine
+    #   the rating of `Title`
     attr_reader :votes
 
-    # @return [String] Returns a URL for the poster of `Title`
+    # @return [String] The URL for the poster of `Title`
     attr_reader :poster_url
 
-    # @return [Array<String>] Returns the genres of `Title`
+    # @return [Array<String>] The genres of `Title`
     attr_reader :genres
 
-    # @return [Date] Returns the release date of `Title`
+    # @return [Date] The release date of `Title`
     attr_reader :release_date
 
     def initialize(imdb_hash = {})
