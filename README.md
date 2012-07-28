@@ -95,6 +95,7 @@ These can be passed in an array inside the hash.
                 ]
 
 ### Configuration
+
 #### Locales
 
 To retrieve information in a different language, either pass locale in the options hash when setting up an instance of `imdb` or set the instance variable locale to your wanted locale once the instance has already been created:
