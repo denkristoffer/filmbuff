@@ -15,7 +15,7 @@ Film Buff 0.2.x provides two ways to return information on a movie or TV show. F
 
 ### find_by_id
 
-If you know the movie's IMDb ID you can return an object with the IMDb information:
+If you know the movie or TV show's IMDb ID you can return an object with the IMDb information:
 
     movie = imdb.find_by_id('tt0032138')
 
@@ -38,7 +38,7 @@ Accessible information for an object returned by `find_by_id` is:
 
 ### find_by_title
 
-You can also search for a movie by its title. This will return an array with results from IMDb's search feature:
+You can also search for a movie or TV show by its title. This will return an array with results from IMDb's search feature:
 
     results = imdb.find_by_title('The Wizard of Oz')
 
