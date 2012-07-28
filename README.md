@@ -119,7 +119,7 @@ Supported locales are
 
 - [Public git repository](https://github.com/sachse/filmbuff)
 - [Online documentation](http://rubydoc.info/gems/filmbuff/frames)
-- [Bug reporting](https://github.com/sachse/filmbuff/issues)
+- [Issue tracker](https://github.com/sachse/filmbuff/issues)
 - [Film Buff on RubyGems](http://rubygems.org/gems/filmbuff)
 
 ## Authors
