@@ -38,6 +38,8 @@ module FilmBuff
 
     # Searches IMDb for `title` and returns an array with results.
     #
+    # @example Search for 'The Wizard of Oz' but only return 3 results
+    #   title = imdb.find_by_title('The Wizard of Oz', limit: 3)
     # @param [String] title The title to search for.
     # @param [Hash] options The options to search with.
     # @option options [Integer] :limit The maximum number of results to return.
