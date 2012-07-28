@@ -38,7 +38,7 @@ Accessible information for an object returned by `find_by_id` is:
 
 ### find_by_title
 
-You can then search for a movie by its title. This will return an array with results from IMDb's search feature:
+You can also search for a movie by its title. This will return an array with results from IMDb's search feature:
 
     results = imdb.find_by_title('The Wizard of Oz')
 
@@ -66,8 +66,6 @@ You can then search for a movie by its title. This will return an array with res
 
                     etc.
                ]
-
-This behavior is different from Film Buff 0.1.x which returned a single object when searching by title, the same way `find_by_id` does. This was changed due to a change in IMDb's API and the fact that the new solution offers more flexibility.
 
 `find_by_title` takes an option hash where you can set the following options
 
@@ -97,22 +95,9 @@ These can be passed in an array inside the hash.
                 ]
 
 ### Configuration
-
-Film Buff offers three configuration settings:
-
-- locale
-- legacy_mode
-- ssl
-
-`ssl` is used by default, but it can be disabled when setting up an instance of FilmBuff::IMDb by passing a hash with configuration options.
-
-    imdb = FilmBuff::IMDb.new({ ssl: false })
-
-`locale` can also be set in this a hash, but this options can also be changed as necessary during runtime by changing the instance variable value.
-
 #### Locales
 
-To retrieve information in a different language, either pass locale in the options hash when setting up the `imdb` instance or set the instance variable locale to your wanted locale once the instance has already been created:
+To retrieve information in a different language, either pass locale in the options hash when setting up an instance of `imdb` or set the instance variable locale to your wanted locale once the instance has already been created:
 
     imdb.locale = 'de_DE'
     movie = imdb.find_by_id('tt0032138')
@@ -129,6 +114,13 @@ Supported locales are
 - fr_FR (French)
 - it_IT (Italian)
 - pt_PT (Portuguese)
+
+## Links
+
+- [Public git repository](https://github.com/sachse/filmbuff)
+- [Online documentation](http://rubydoc.info/gems/filmbuff/frames)
+- [Bug reporting](https://github.com/sachse/filmbuff/issues)
+- [Film Buff on RubyGems](http://rubygems.org/gems/filmbuff)
 
 ## Authors
 
