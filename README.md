@@ -57,31 +57,26 @@ You can also search for a movie or TV show by its title. This will return an arr
                         :release_year => "1925"
                     },
 
-                    {
-                        :type => "title_exact",
-                        :imdb_id => "tt0001463",
-                        :title => "The Wonderful Wizard of Oz",
-                        :release_year => "1910"
-                    },
-
                     etc.
                ]
 
-`find_by_title` takes an option hash where you can set the following options
+### Configuration
 
-- limit
-- types
+When initializing a new `FilmBuff::IMDb` instance an options Hash can be passed to change default behaviours:
 
-`limit` limits the amount of results returned.
+- SSL is used by default when communicating with IMDb but it can be turned off by explicitly setting `:ssl` to false.
+- Locale defaults to `en_US` but this behaviour can be changed by passing `:locale` with a different value to the options Hash. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.
 
-`types` decides the types of titles IMDb will search. Valid settings are:
+`find_by_title` also takes an option hash that can be used to change its default behaviours on a per search basis.
 
-- title_popular
-- title_exact
-- title_approx
-- title_substring
+- `:limit` limits the amount of results returned.
+- `:types` decides the types of titles IMDb will search. Valid settings are:
+    - title_popular
+    - title_exact
+    - title_approx
+    - title_substring
 
-These can be passed in an array inside the hash.
+An example:
 
     results = imdb.find_by_title('The Wizard of Oz', types: %w(title_popular))
 
@@ -93,8 +88,6 @@ These can be passed in an array inside the hash.
                         :release_year => "1939"
                     }
                 ]
-
-### Configuration
 
 #### Locales
 
