@@ -25,12 +25,17 @@ module FilmBuff
 
     public
 
-    # Looks up the title with the IMDb ID `imdb_id` and returns a
+    # Looks up the title with the IMDb ID imdb_id and returns a
     # FilmBuff::Title object with information on that title.
     #
-    # @param [String] imdb_id The IMDb ID for the title to look up.
-    # @return [Title] The FilmBuff::Title object containing information on the
-    #   title.
+    # @param [String] imdb_id
+    #   The IMDb ID for the title to look up.
+    #
+    # @return [Title]
+    #   The FilmBuff::Title object containing information on the title.
+    #
+    # @example Basic usage
+    #   movie = imdb_instance.find_by_id('tt0032138')
     def find_by_id(imdb_id)
       result = self.class.get('/title/maindetails', :query => {
         :tconst => imdb_id, :locale => @locale
@@ -39,17 +44,29 @@ module FilmBuff
       Title.new(result['data'])
     end
 
-    # Searches IMDb for `title` and returns an array with results.
+    # Searches IMDb for the title provided and returns an array with results
     #
-    # @example Search for 'The Wizard of Oz' but only return 3 results
-    #   title = imdb.find_by_title('The Wizard of Oz', limit: 3)
-    # @param [String] title The title to search for.
-    # @param [Hash] options The options to search with.
-    # @option options [Integer] :limit The maximum number of results to return.
+    # @param [String] title The title to search for
+    #
+    # @param [Hash] options The options to search with
+    #
+    # @option options [Integer] :limit The maximum number of results to return
+    #
     # @option options [Array] :types The types of possible matches to search.
-    #   The types will be searched in the provided order.
+    #   The types will be searched in the provided order
+    #
     # @return [Array<Hash>] An array of hashes, each representing a search
     #   result.
+    #
+    # @example Basic usage
+    #   movie = imdb_instance.find_by_title('The Wizard of Oz')
+    #
+    # @example Only return 3 results
+    #   movie = imdb_instance.find_by_title('The Wizard of Oz', limit: 3)
+    #
+    # @example Only return results containing the exact title provided
+    #   movie = imdb_instance.find_by_title('The Wizard of Oz',
+    #                                       types: %w(title_exact))
     def find_by_title(title, options = {})
       options = {
         limit: nil,
