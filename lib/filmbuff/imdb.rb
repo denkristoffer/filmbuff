@@ -16,6 +16,10 @@ module FilmBuff
     # @option options [Boolean] :ssl
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
     #   currently support SSL when searching by title). Defaults to true.
+    def initialize(options = {})
+      @locale = options[:locale] || 'en_US'
+      @protocol = options[:ssl] ? 'https' : 'http'
+    end
 
     private
 
