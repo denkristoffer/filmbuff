@@ -3,6 +3,19 @@ module FilmBuff
     # @return [String] The locale currently used by the IMDb instance
     attr_accessor :locale
 
+    # Create a new IMDb instance
+    #
+    # @param [Hash<Symbol>] options Options Hash
+    #   Changes the instance's default behaviours. Options are passed as
+    #   symbols in a hash.
+    #
+    # @option options [String] :locale
+    #   The locale to search with. The IMDb instance will also return
+    #   results in the language matching the given locale. Defaults to 'en_US'.
+    #
+    # @option options [Boolean] :ssl
+    #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
+    #   currently support SSL when searching by title). Defaults to true.
 
 
 
