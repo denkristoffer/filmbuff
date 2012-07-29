@@ -17,10 +17,16 @@ module FilmBuff
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
     #   currently support SSL when searching by title). Defaults to true.
 
+    private
 
+    def connection
+      cache_dir = File.join(ENV['TMPDIR'] || '/tmp', 'cache')
 
-    def initialize(options = {})
-      @locale = options[:locale] || 'en_US'
+       connection ||= Faraday.new(:url => "#@protocol://app.imdb.com") do |c|
+        c.use
+        c.response :json
+        c.adapter Faraday.default_adapter
+      end
     end
 
     public
