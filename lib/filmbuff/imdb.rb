@@ -83,17 +83,17 @@ module FilmBuff
         types: %w(title_popular title_exact title_approx title_substring)
       }.merge!(options)
 
-      result = self.class.get('http://www.imdb.com/xml/find', :query => {
+      response = connection.get 'http://www.imdb.com/xml/find', {
         :q => title,
         :json => '1',
         :tt => 'on'
-      }).parsed_response
+      }
 
       results = []
 
       options[:types].each do |key|
-        if result[key]
-          result[key].each do |row|
+        if response.body[key]
+          response.body[key].each do |row|
             break unless results.size < options[:limit] if options[:limit]
             next unless row['id'] && row['title'] && row['description']
 
