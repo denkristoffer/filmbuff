@@ -3,13 +3,8 @@ module FilmBuff
     # @return [String] The locale currently used by the IMDb instance
     attr_accessor :locale
 
-    include HTTParty
-    include HTTParty::Icebox
 
-    base_uri 'https://app.imdb.com'
-    format :json
 
-    cache :store => 'memory', :timeout => 120
 
     # @param [Hash] options Options Hash
     # @option options [String] :locale The locale to search with. Will also
@@ -18,7 +13,6 @@ module FilmBuff
     #   requests
     def initialize(options = {})
       @locale = options[:locale] || 'en_US'
-      self.class.base_uri 'app.imdb.com' if !options[:ssl]
     end
 
     public
