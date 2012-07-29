@@ -37,11 +37,11 @@ module FilmBuff
     # @example Basic usage
     #   movie = imdb_instance.find_by_id('tt0032138')
     def find_by_id(imdb_id)
-      result = self.class.get('/title/maindetails', :query => {
+      response = connection.get '/title/maindetails', {
         :tconst => imdb_id, :locale => @locale
-      }).parsed_response
+      }
 
-      Title.new(result['data'])
+      Title.new(response.body['data'])
     end
 
     # Searches IMDb for the title provided and returns an array with results
