@@ -1,5 +1,6 @@
 module FilmBuff
   class IMDb
+    # @return [String] The locale currently used by the IMDb instance
     attr_accessor :locale
 
     include HTTParty
