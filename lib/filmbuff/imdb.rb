@@ -24,8 +24,6 @@ module FilmBuff
     private
 
     def connection
-      cache_dir = File.join(ENV['TMPDIR'] || '/tmp', 'cache')
-
        connection ||= Faraday.new(:url => "#@protocol://app.imdb.com") do |c|
         c.use
         c.response :json
