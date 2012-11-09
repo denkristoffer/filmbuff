@@ -24,7 +24,6 @@ module FilmBuff
     private
 
     def connection
-        c.use
       connection ||= Faraday.new(:url => "#@protocol://app.imdb.com") do |c|
         c.response :json
         c.adapter Faraday.default_adapter
