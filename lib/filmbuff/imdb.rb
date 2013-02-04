@@ -78,7 +78,7 @@ module FilmBuff
       options = {
         limit: nil,
         types: %w(title_popular title_exact title_approx title_substring)
-      }.merge!(options)
+      }.merge(options)
 
       response = connection.get 'http://www.imdb.com/xml/find', {
         :q => title,
