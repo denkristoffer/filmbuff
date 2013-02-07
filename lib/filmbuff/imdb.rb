@@ -76,8 +76,8 @@ module FilmBuff
     #                                       types: %w(title_exact))
     def find_by_title(title, options = {})
       options = {
-        limit: nil,
-        types: %w(title_popular title_exact title_approx title_substring)
+        :limit => nil,
+        :types => %w(title_popular title_exact title_approx title_substring)
       }.merge(options)
 
       response = connection.get 'http://www.imdb.com/xml/find', {
