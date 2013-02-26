@@ -5,15 +5,11 @@ module FilmBuff
 
     # Create a new IMDb instance
     #
-    # @param [Hash<Symbol>] options Options Hash
-    #   Changes the instance's default behaviours. Options are passed as
-    #   symbols in a hash.
-    #
-    # @option options [String] :locale
+    # @param [String] locale
     #   The locale to search with. The IMDb instance will also return
     #   results in the language matching the given locale. Defaults to 'en_US'.
     #
-    # @option options [Boolean] :ssl
+    # @param [Boolean] ssl
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
     #   currently support SSL when searching by title). Defaults to true.
     def initialize(locale: 'en_US', ssl: true)
@@ -55,11 +51,9 @@ module FilmBuff
     #
     # @param [String] title The title to search for
     #
-    # @param [Hash] options The options to search with
+    # @param [Integer] limit The maximum number of results to return
     #
-    # @option options [Integer] :limit The maximum number of results to return
-    #
-    # @option options [Array] :types The types of possible matches to search.
+    # @param [Array] types The types of possible matches to search.
     #   The types will be searched in the provided order
     #
     # @return [Array<Hash>] An array of hashes, each representing a search
