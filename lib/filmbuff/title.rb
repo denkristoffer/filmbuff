@@ -32,7 +32,7 @@ module FilmBuff
     # @return [Date] The release date of Title
     attr_reader :release_date
 
-    def initialize(imdb_hash = {})
+    def initialize(imdb_hash)
       @imdb_id = imdb_hash['tconst']
       @title = imdb_hash['title']
       @tagline = imdb_hash['tagline'] if imdb_hash['tagline']
