@@ -16,9 +16,9 @@ module FilmBuff
     # @option options [Boolean] :ssl
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
     #   currently support SSL when searching by title). Defaults to true.
-    def initialize(options = {})
-      @locale = options[:locale] || 'en_US'
-      @protocol = options[:ssl] ? 'https' : 'http'
+    def initialize(locale: 'en_US', ssl: true)
+      @locale = locale
+      @protocol = ssl ? 'https' : 'http'
     end
 
     private
@@ -74,12 +74,10 @@ module FilmBuff
     # @example Only return results containing the exact title provided
     #   movie = imdb_instance.find_by_title('The Wizard of Oz',
     #                                       types: %w(title_exact))
-    def find_by_title(title, options = {})
-      options = {
-        :limit => nil,
-        :types => %w(title_popular title_exact title_approx title_substring)
-      }.merge(options)
-
+    def find_by_title(title, limit: nil, types: %w(title_popular
+                                                   title_exact
+                                                   title_approx
+                                                   title_substring))
       response = connection.get 'http://www.imdb.com/xml/find', {
         :q => title,
         :json => '1',
