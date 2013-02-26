@@ -1,3 +1,5 @@
+require 'date'
+
 module FilmBuff
   # Represents a single title from IMDb and contains all available data on it
   class Title
