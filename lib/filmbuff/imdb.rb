@@ -1,4 +1,5 @@
 module FilmBuff
+  # @todo Document returned objects in examples
   class IMDb
     # @return [String] The locale currently used by the IMDb instance
     attr_accessor :locale
