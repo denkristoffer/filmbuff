@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency('faraday', '~> 0.8')
 
   s.add_development_dependency('minitest', '>= 1.4.0')
-  s.add_development_dependency('yard')
+  s.add_development_dependency('yard', '>= 0.8.5.2')
   s.add_development_dependency('kramdown')
 
   s.files         = `git ls-files`.split("\n")
