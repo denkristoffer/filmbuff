@@ -26,6 +26,15 @@ module FilmBuff
       end
     end
 
+    def build_hash(type, value)
+      {
+        :type => type,
+        :imdb_id => value['id'],
+        :title => value['title'],
+        :release_year => value['description'][/\A\d{4}/]
+      }
+    end
+
     public
 
     # Looks up the title with the IMDb ID imdb_id and returns a
@@ -87,14 +96,7 @@ module FilmBuff
             break unless results.size < limit if limit
             next unless row['id'] && row['title'] && row['description']
 
-            title = {
-              type: key,
-              imdb_id: row['id'],
-              title: row['title'],
-              release_year: row['description'].scan(/\A\d{4}/).first
-            }
-
-            results << title
+            results << build_hash(key, row)
           end
         end
       end
