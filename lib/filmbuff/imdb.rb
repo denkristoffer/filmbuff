@@ -87,21 +87,21 @@ module FilmBuff
         :json => '1',
         :tt => 'on'
       }
+      output = []
 
-      results = []
 
       types.each do |key|
         if response.body[key]
           response.body[key].each do |row|
-            break unless results.size < limit if limit
             next unless row['id'] && row['title'] && row['description']
+          break unless output.size < limit if limit
 
-            results << build_hash(key, row)
           end
+          output << build_hash(key, row)
         end
       end
 
-      results
+      output
     end
   end
 end
