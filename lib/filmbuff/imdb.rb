@@ -80,10 +80,10 @@ module FilmBuff
 
       results = []
 
-      options[:types].each do |key|
+      types.each do |key|
         if response.body[key]
           response.body[key].each do |row|
-            break unless results.size < options[:limit] if options[:limit]
+            break unless results.size < limit if limit
             next unless row['id'] && row['title'] && row['description']
 
             title = {
