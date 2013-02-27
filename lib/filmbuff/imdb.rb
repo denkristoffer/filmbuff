@@ -87,8 +87,8 @@ module FilmBuff
         :json => '1',
         :tt => 'on'
       }
-      output = []
 
+      output = []
       results = response.body.select { |key| types.include? key }
 
       results.each_key do |key|
