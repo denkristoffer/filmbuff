@@ -89,14 +89,13 @@ module FilmBuff
       }
       output = []
 
+      results = response.body.select { |key| types.include? key }
 
-      types.each do |key|
-        if response.body[key]
-          response.body[key].each do |row|
-            next unless row['id'] && row['title'] && row['description']
+      results.each_key do |key|
+        response.body[key].each do |row|
           break unless output.size < limit if limit
+          next unless row['id'] && row['title'] && row['description']
 
-          end
           output << build_hash(key, row)
         end
       end
