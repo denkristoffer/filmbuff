@@ -7,11 +7,11 @@ module FilmBuff
     #
     # @param [String] locale
     #   The locale to search with. The IMDb instance will also return
-    #   results in the language matching the given locale. Defaults to 'en_US'.
+    #   results in the language matching the given locale. Defaults to `en_US`
     #
     # @param [Boolean] ssl
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
-    #   currently support SSL when searching by title). Defaults to true.
+    #   currently support SSL when searching by title). Defaults to `true`
     def initialize(locale: 'en_US', ssl: true)
       @locale = locale
       @protocol = ssl ? 'https' : 'http'
@@ -29,13 +29,13 @@ module FilmBuff
     public
 
     # Looks up the title with the IMDb ID imdb_id and returns a
-    # FilmBuff::Title object with information on that title.
+    # FilmBuff::Title object with information on that title
     #
     # @param [String] imdb_id
-    #   The IMDb ID for the title to look up.
+    #   The IMDb ID for the title to look up
     #
     # @return [Title]
-    #   The FilmBuff::Title object containing information on the title.
+    #   The FilmBuff::Title object containing information on the title
     #
     # @example Basic usage
     #   movie = imdb_instance.find_by_id('tt0032138')
@@ -53,11 +53,12 @@ module FilmBuff
     #
     # @param [Integer] limit The maximum number of results to return
     #
-    # @param [Array] types The types of possible matches to search.
-    #   The types will be searched in the provided order
+    # @param [Array] types The types of matches to search for.
+    #   These types will be searched in the provided order. Can be
+    #   `title_popular`, `title_exact`, `title_approx`, and `title_substring`
     #
     # @return [Array<Hash>] An array of hashes, each representing a search
-    #   result.
+    #   result
     #
     # @example Basic usage
     #   movie = imdb_instance.find_by_title('The Wizard of Oz')
