@@ -62,15 +62,15 @@ You can also search for a movie or TV show by its title. This will return an arr
 
 ### Configuration
 
-When initializing a new `FilmBuff::IMDb` instance an options Hash can be passed to change default behaviours:
+When initializing a new `FilmBuff::IMDb` instance keyword arguments can passed to change default behaviours:
 
-- SSL is used by default when communicating with IMDb but it can be turned off by explicitly setting `:ssl` to false.
-- Locale defaults to `en_US` but this behaviour can be changed by passing `:locale` with a different value to the options Hash. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.
+- SSL is used by default when communicating with IMDb but it can be turned off by explicitly setting `ssl` to false.
+- Locale defaults to `en_US` but this behaviour can be changed by passing `locale` with a different value. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.
 
-`find_by_title` also takes an option hash that can be used to change its default behaviours on a per search basis.
+`find_by_title` also takes keyword arguments that can be used to change the default behaviours on a per search basis.
 
-- `:limit` limits the amount of results returned.
-- `:types` decides the types of titles IMDb will search. Valid settings are:
+- `limit` limits the amount of results returned.
+- `types` decides the types of titles IMDb will search. Valid settings are:
     - title_popular
     - title_exact
     - title_approx
@@ -91,7 +91,7 @@ An example:
 
 #### Locales
 
-To retrieve information in a different language, either pass locale in the options hash when setting up an instance of `imdb` or set the instance variable locale to your wanted locale once the instance has already been created:
+To retrieve information in a different language, either pass locale as as keyword argument when setting up an instance of `imdb` or set the instance variable `locale` to your wanted locale once the instance has already been created:
 
     imdb.locale = 'de_DE'
     movie = imdb.find_by_id('tt0032138')
