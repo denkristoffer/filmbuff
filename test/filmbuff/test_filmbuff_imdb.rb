@@ -1,4 +1,10 @@
 require_relative '../test_helper'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.hook_into :faraday
+end
 
 describe FilmBuff::IMDb do
   before do
@@ -7,7 +13,10 @@ describe FilmBuff::IMDb do
 
   describe '#find_by_id' do
     it 'returns a Title' do
-      @title = @imdb.find_by_id('tt0032138')
+      VCR.use_cassette('The Wizard of Oz by ID') do
+        @title = @imdb.find_by_id('tt0032138')
+      end
+
       assert_instance_of FilmBuff::Title, @title
     end
 
@@ -15,7 +24,10 @@ describe FilmBuff::IMDb do
       describe 'de_DE' do
         before do
           @imdb.locale = 'de_DE'
-          @title = @imdb.find_by_id('tt0132138')
+
+          VCR.use_cassette('The Wizard of Oz German') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns German information' do
@@ -26,7 +38,10 @@ describe FilmBuff::IMDb do
       describe 'en_US' do
         before do
           @imdb.locale = 'en_US'
-          @title = @imdb.find_by_id('tt0032138')
+
+          VCR.use_cassette('The Wizard of Oz by ID') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns English information' do
@@ -37,7 +52,10 @@ describe FilmBuff::IMDb do
       describe 'es_ES' do
         before do
           @imdb.locale = 'es_ES'
-          @title = @imdb.find_by_id('tt0032138')
+
+          VCR.use_cassette('The Wizard of Oz Spanish') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns Spanish information' do
@@ -48,7 +66,10 @@ describe FilmBuff::IMDb do
       describe 'fr_FR' do
         before do
           @imdb.locale = 'fr_FR'
-          @title = @imdb.find_by_id('tt0032138')
+
+          VCR.use_cassette('The Wizard of Oz French') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns French information' do
@@ -59,7 +80,10 @@ describe FilmBuff::IMDb do
       describe 'it_IT' do
         before do
           @imdb.locale = 'it_IT'
-          @title = @imdb.find_by_id('tt0032138')
+
+          VCR.use_cassette('The Wizard of Oz Italian') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns Italian information' do
@@ -70,7 +94,10 @@ describe FilmBuff::IMDb do
       describe 'pt_PT' do
         before do
           @imdb.locale = 'pt_PT'
-          @title = @imdb.find_by_id('tt0032138')
+
+          VCR.use_cassette('The Wizard of Oz Portugese') do
+            @title = @imdb.find_by_id('tt0032138')
+          end
         end
 
         it 'returns Portugese information' do
@@ -83,7 +110,9 @@ describe FilmBuff::IMDb do
   describe '#find_by_title' do
     describe 'with default options' do
       before do
-        @titles = @imdb.find_by_title('The Wizard of Oz')
+        VCR.use_cassette('The Wizard of Oz by title') do
+          @titles = @imdb.find_by_title('The Wizard of Oz')
+        end
       end
 
       it 'returns an array of titles' do
@@ -93,7 +122,9 @@ describe FilmBuff::IMDb do
 
     describe 'given a limit of 3' do
       before do
-        @titles = @imdb.find_by_title('The Wizard of Oz', limit: 3)
+        VCR.use_cassette('The Wizard of Oz by title') do
+          @titles = @imdb.find_by_title('The Wizard of Oz', limit: 3)
+        end
       end
 
       it 'returns 3 results' do
@@ -103,8 +134,10 @@ describe FilmBuff::IMDb do
 
     describe 'when only returning popular titles' do
       before do
-        @title = @imdb.find_by_title('The Wizard of Oz',
+        VCR.use_cassette('The Wizard of Oz by title') do
+          @title = @imdb.find_by_title('The Wizard of Oz',
                                      types: %w(title_popular))
+        end
       end
 
       it 'returns the 1939 version' do
