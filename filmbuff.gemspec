@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency('faraday_middleware', '~> 0.8')
 
   s.add_development_dependency('minitest', '>= 1.4.0')
+  s.add_development_dependency('vcr', '>= 2.4.0')
   s.add_development_dependency('yard', '>= 0.8.5.2')
   s.add_development_dependency('kramdown')
   s.add_development_dependency('simplecov')
