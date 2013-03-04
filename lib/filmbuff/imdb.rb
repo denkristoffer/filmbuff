@@ -27,12 +27,12 @@ module FilmBuff
       end
     end
 
-    def build_hash(type, value)
+    def build_hash(type, values)
       {
         :type => type,
-        :imdb_id => value['id'],
-        :title => value['title'],
-        :release_year => value['description'][/\A\d{4}/]
+        :imdb_id => values['id'],
+        :title => values['title'],
+        :release_year => values['description'][/\A\d{4}/]
       }
     end
 
