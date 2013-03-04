@@ -6,12 +6,77 @@ describe FilmBuff::IMDb do
   end
 
   describe '#find_by_id' do
-    before do
+    it 'returns a Title' do
       @title = @imdb.find_by_id('tt0032138')
+      assert_instance_of FilmBuff::Title, @title
     end
 
-    it 'returns a Title' do
-      assert_instance_of FilmBuff::Title, @title
+    describe 'given locale' do
+      describe 'de_DE' do
+        before do
+          @imdb.locale = 'de_DE'
+          @title = @imdb.find_by_id('tt0132138')
+        end
+
+        it 'returns German information' do
+          assert_equal 'Das zauberhafte Land', @title.title
+        end
+      end
+
+      describe 'en_US' do
+        before do
+          @imdb.locale = 'en_US'
+          @title = @imdb.find_by_id('tt0032138')
+        end
+
+        it 'returns English information' do
+          assert_equal 'The Wizard of Oz', @title.title
+        end
+      end
+
+      describe 'es_ES' do
+        before do
+          @imdb.locale = 'es_ES'
+          @title = @imdb.find_by_id('tt0032138')
+        end
+
+        it 'returns Spanish information' do
+          assert_equal 'El mago de Oz', @title.title
+        end
+      end
+
+      describe 'fr_FR' do
+        before do
+          @imdb.locale = 'fr_FR'
+          @title = @imdb.find_by_id('tt0032138')
+        end
+
+        it 'returns French information' do
+          assert_equal 'Le magicien d\'Oz', @title.title
+        end
+      end
+
+      describe 'it_IT' do
+        before do
+          @imdb.locale = 'it_IT'
+          @title = @imdb.find_by_id('tt0032138')
+        end
+
+        it 'returns Italian information' do
+          assert_equal 'Il mago di Oz', @title.title
+        end
+      end
+
+      describe 'pt_PT' do
+        before do
+          @imdb.locale = 'pt_PT'
+          @title = @imdb.find_by_id('tt0032138')
+        end
+
+        it 'returns Portugese information' do
+          assert_equal 'O Feiticeiro de Oz', @title.title
+        end
+      end
     end
   end
 
