@@ -1,3 +1,7 @@
+require 'faraday'
+require 'faraday_middleware'
+require 'faraday-http-cache'
+
 module FilmBuff
   # @todo Document returned objects in examples
   class IMDb
