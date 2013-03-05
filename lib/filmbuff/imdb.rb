@@ -17,15 +17,21 @@ module FilmBuff
     # @param [Boolean] ssl
     #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
     #   currently support SSL when searching by title). Defaults to `true`
-    def initialize(locale: 'en_US', ssl: true)
+    #
+    # @param [Object] logger
+    #   An instance of a logger object. Defaults to `nil` and no logging
+    def initialize(locale = 'en_US', ssl: true, cache: nil, logger: nil)
       @locale = locale
       @protocol = ssl ? 'https' : 'http'
+      @cache = cache
+      @logger = logger
     end
 
     private
 
     def connection
       connection ||= Faraday.new(:url => "#{@protocol}://app.imdb.com") do |c|
+        c.use :http_cache, @cache, :logger => @logger
         c.response :json
         c.adapter Faraday.default_adapter
       end
