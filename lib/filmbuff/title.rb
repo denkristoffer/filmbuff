@@ -34,6 +34,10 @@ class FilmBuff
     # @return [Date] The release date of Title
     attr_reader :release_date
 
+    # Create a new Title instance from an IMDb hash
+    #
+    # @param [Hash] imdb_hash
+    #   The hash with IMDb information to create a Title instance from
     def initialize(imdb_hash)
       @imdb_id = imdb_hash['tconst']
       @title = imdb_hash['title']
