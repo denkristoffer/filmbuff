@@ -2,8 +2,11 @@ require_relative '../test_helper'
 
 describe FilmBuff::Title do
   before do
-    @title = @imdb.find_by_id('tt0032138')
     @imdb = FilmBuff.new
+
+    VCR.use_cassette('The Wizard of Oz by ID') do
+      @title = @imdb.find_by_id('tt0032138')
+    end
   end
 
   it 'has an IMDb ID' do
