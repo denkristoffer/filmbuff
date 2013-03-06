@@ -135,7 +135,7 @@ describe FilmBuff do
       before do
         VCR.use_cassette('The Wizard of Oz by title') do
           @title = @imdb.find_by_title('The Wizard of Oz',
-                                     types: %w(title_popular))
+                                       types: %w(title_popular))
         end
       end
 
