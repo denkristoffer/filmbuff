@@ -1,14 +1,13 @@
-require_relative '../test_helper'
-require 'vcr'
+require_relative 'test_helper'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.hook_into :faraday
 end
 
-describe FilmBuff::IMDb do
+describe FilmBuff do
   before do
-    @imdb = FilmBuff::IMDb.new
+    @imdb = FilmBuff.new
   end
 
   describe '#find_by_id' do

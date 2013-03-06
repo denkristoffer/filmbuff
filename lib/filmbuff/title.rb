@@ -1,6 +1,6 @@
 require 'date'
 
-module FilmBuff
+class FilmBuff
   # Represents a single title from IMDb and contains all available data on it
   class Title
     # @return [String] The IMDb ID of Title

@@ -11,7 +11,7 @@ Film Buff supports IMDb's different locales, so information can be retrieved in 
 Film Buff 0.2.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
 
     require 'filmbuff'
-    imdb = FilmBuff::IMDb.new
+    imdb = FilmBuff.new
 
 ### find_by_id
 
@@ -62,7 +62,7 @@ You can also search for a movie or TV show by its title. This will return an arr
 
 ### Configuration
 
-When initializing a new `FilmBuff::IMDb` instance keyword arguments can passed to change default behaviours:
+When initializing a new `FilmBuff` instance keyword arguments can passed to change default behaviours:
 
 - SSL is used by default when communicating with IMDb but it can be turned off by explicitly setting `ssl` to false.
 - Locale defaults to `en_US` but this behaviour can be changed by passing `locale` with a different value. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.

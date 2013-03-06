@@ -2,8 +2,8 @@ require_relative '../test_helper'
 
 describe FilmBuff::Title do
   before do
-    @imdb = FilmBuff::IMDb.new
     @title = @imdb.find_by_id('tt0032138')
+    @imdb = FilmBuff.new
   end
 
   it 'has an IMDb ID' do
