@@ -8,7 +8,7 @@ Film Buff supports IMDb's different locales, so information can be retrieved in 
 
 ## Usage
 
-Film Buff 0.2.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
+Film Buff 1.0.x provides two ways to return information on a movie or TV show. First, set up an IMDb instance:
 
     require 'filmbuff'
     imdb = FilmBuff.new
@@ -20,7 +20,7 @@ If you know the movie or TV show's IMDb ID you can return an object with the IMD
     movie = imdb.find_by_id('tt0032138')
 
     movie.title => "The Wizard of Oz"
-    movie.rating => 8.3
+    movie.rating => 8.2
     movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
 
 Accessible information for an object returned by `find_by_id` is:
