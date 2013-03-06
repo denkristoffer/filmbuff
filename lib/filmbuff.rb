@@ -90,8 +90,8 @@ class FilmBuff
   # @example Basic usage
   #   movie = imdb_instance.find_by_title('The Wizard of Oz')
   #
-  # @example Only return 3 results
-  #   movie = imdb_instance.find_by_title('The Wizard of Oz', limit: 3)
+  # @example Return only 2 results
+  #   movie = imdb_instance.find_by_title('The Wizard of Oz', limit: 2)
   #
   # @example Only return results containing the exact title provided
   #   movie = imdb_instance.find_by_title('The Wizard of Oz',

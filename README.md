@@ -57,7 +57,15 @@ You can also search for a movie or TV show by its title. This will return an arr
                         :release_year => "1925"
                     },
 
+                    {
+                        :type=>"title_exact",
+                        :imdb_id=>"tt0001463",
+                        :title=>"The Wonderful Wizard of Oz",
+                        :release_year=>"1910"
+                    },
+
                     etc.
+
                ]
 
 ### Configuration
@@ -78,7 +86,30 @@ When initializing a new `FilmBuff` instance keyword arguments can passed to chan
     - title_approx
     - title_substring
 
-An example:
+Examples:
+
+Return only 2 results:
+
+    results = imdb.find_by_title('The Wizard of Oz', limit: 2)
+
+    results => [
+                    {
+                        :type => "title_popular",
+                        :imdb_id => "tt0032138",
+                        :title => "The Wizard of Oz",
+                        :release_year => "1939"
+                    },
+
+                    {
+                        :type => "title_exact",
+                        :imdb_id => "tt0016544",
+                        :title => "The Wizard of Oz",
+                        :release_year => "1925"
+                    }
+                ]
+
+
+Only return results containing the exact title provided:
 
     results = imdb.find_by_title('The Wizard of Oz', types: %w(title_popular))
 
@@ -95,12 +126,12 @@ An example:
 
 To retrieve information in a different language, either pass locale as as keyword argument when setting up an instance of `imdb` or set the instance variable `locale` to your wanted locale once the instance has already been created:
 
-    imdb.locale = 'de_DE'
+    imdb.locale = 'fr_FR'
     movie = imdb.find_by_id('tt0032138')
 
-    movie.title => "Das zauberhafte Land"
-    movie.rating => 8.3
-    movie.genres => ["Abenteuer", "Familie", "Fantasy", "Musical"]
+    movie.title => "Le magicien d'Oz"
+    movie.rating => 8.2
+    movie.genres => ["Aventure", "Famille", "Fantasy", "Musical"]
 
 Supported locales are
 
