@@ -64,7 +64,7 @@ You can also search for a movie or TV show by its title. This will return an arr
 
 When initializing a new `FilmBuff` instance keyword arguments can passed to change default behaviours:
 
-- SSL is used by default when communicating with IMDb but it can be turned off by explicitly setting `ssl` to false.
+- SSL is used by default when communicating with IMDb but it can be turned off by setting `ssl` to false.
 - Locale defaults to `en_US` but this behaviour can be changed by passing `locale` with a different value. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.
 
 `find_by_title` also takes keyword arguments that can be used to change the default behaviours on a per search basis.
