@@ -86,7 +86,7 @@ When initializing a new `FilmBuff` instance keyword arguments can passed to chan
     - title_approx
     - title_substring
 
-Examples:
+#### Examples
 
 Return only 2 results:
 
