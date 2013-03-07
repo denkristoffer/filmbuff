@@ -111,8 +111,7 @@ Return only 2 results:
 
 Only return popular results related to the title provided:
 
-    result = imdb.search_for_title('The Wizard of Oz',
-                                   types: %w(title_popular))
+    result = imdb.search_for_title('The Wizard of Oz', types: %w(title_popular))
 
     result =>   [
                     {
