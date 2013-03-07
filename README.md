@@ -36,11 +36,11 @@ Accessible information for an object returned by `look_up_id` is:
 - Release date
 - IMDb ID
 
-### find_by_title
+### search_for_title
 
 You can also search for a movie or TV show by its title. This will return an array with results from IMDb's search feature:
 
-    results = imdb.find_by_title('The Wizard of Oz')
+    results = imdb.search_for_title('The Wizard of Oz')
 
     results => [
                     {
@@ -77,7 +77,7 @@ When initializing a new `FilmBuff` instance keyword arguments can passed to chan
 - Caching is possible through [Faraday Http Cache](https://github.com/plataformatec/faraday-http-cache). It can be enabled by setting `cache` to an object such as `Rails.cache` or by passing it a hash that will be used to configure the cache store, such as `:mem_cache_store, 'localhost:11211'`
 - Logging can be enabled by setting `logger` to a logging object.
 
-`find_by_title` also takes keyword arguments that can be used to change the default behaviours on a per search basis.
+`search_for_title` also takes keyword arguments that can be used to change the default behaviours on a per search basis.
 
 - `limit` limits the amount of results returned.
 - `types` decides the types of titles IMDb will search. Valid settings are:
@@ -90,7 +90,7 @@ Examples:
 
 Return only 2 results:
 
-    results = imdb.find_by_title('The Wizard of Oz', limit: 2)
+    results = imdb.search_for_title('The Wizard of Oz', limit: 2)
 
     results => [
                     {
@@ -111,7 +111,7 @@ Return only 2 results:
 
 Only return popular results related to the title provided:
 
-    results = imdb.find_by_title('The Wizard of Oz', types: %w(title_popular))
+    results = imdb.search_for_title('The Wizard of Oz', types: %w(title_popular))
 
     results => [
                     {

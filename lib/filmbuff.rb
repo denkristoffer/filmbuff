@@ -88,15 +88,15 @@ class FilmBuff
   #   result
   #
   # @example Basic usage
-  #   movie = imdb_instance.find_by_title('The Wizard of Oz')
+  #   movie = imdb_instance.search_for_title('The Wizard of Oz')
   #
   # @example Return only 2 results
-  #   movie = imdb_instance.find_by_title('The Wizard of Oz', limit: 2)
+  #   movie = imdb_instance.search_for_title('The Wizard of Oz', limit: 2)
   #
   # @example Only return results containing the exact title provided
-  #   movie = imdb_instance.find_by_title('The Wizard of Oz',
+  #   movie = imdb_instance.search_for_title('The Wizard of Oz',
   #                                       types: %w(title_exact))
-  def find_by_title(title, limit: nil, types: %w(title_popular
+  def search_for_title(title, limit: nil, types: %w(title_popular
                                                  title_exact
                                                  title_approx
                                                  title_substring))

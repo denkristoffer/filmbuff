@@ -106,11 +106,11 @@ describe FilmBuff do
     end
   end
 
-  describe '#find_by_title' do
+  describe '#search_for_title' do
     describe 'with default options' do
       before do
         VCR.use_cassette('The Wizard of Oz by title') do
-          @titles = @imdb.find_by_title('The Wizard of Oz')
+          @titles = @imdb.search_for_title('The Wizard of Oz')
         end
       end
 
@@ -122,7 +122,7 @@ describe FilmBuff do
     describe 'given a limit of 3' do
       before do
         VCR.use_cassette('The Wizard of Oz by title') do
-          @titles = @imdb.find_by_title('The Wizard of Oz', limit: 3)
+          @titles = @imdb.search_for_title('The Wizard of Oz', limit: 3)
         end
       end
 
@@ -134,7 +134,7 @@ describe FilmBuff do
     describe 'when only returning popular titles' do
       before do
         VCR.use_cassette('The Wizard of Oz by title') do
-          @title = @imdb.find_by_title('The Wizard of Oz',
+          @title = @imdb.search_for_title('The Wizard of Oz',
                                        types: %w(title_popular))
         end
       end
