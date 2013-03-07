@@ -5,7 +5,7 @@ describe FilmBuff::Title do
     @imdb = FilmBuff.new
 
     VCR.use_cassette('The Wizard of Oz by ID') do
-      @title = @imdb.find_by_id('tt0032138')
+      @title = @imdb.look_up_id('tt0032138')
     end
   end
 
