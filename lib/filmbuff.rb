@@ -37,7 +37,7 @@ class FilmBuff
   private
 
   def connection
-    connection ||= Faraday.new(:url => "#{@protocol}://app.imdb.com") do |c|
+    @connection ||= Faraday.new(:url => "#{@protocol}://app.imdb.com") do |c|
       c.use :http_cache, @cache, :logger => @logger
       c.response :json
       c.adapter Faraday.default_adapter
