@@ -109,7 +109,7 @@ Return only 2 results:
                 ]
 
 
-Only return results containing the exact title provided:
+Only return popular results related to the title provided:
 
     results = imdb.find_by_title('The Wizard of Oz', types: %w(title_popular))
 
