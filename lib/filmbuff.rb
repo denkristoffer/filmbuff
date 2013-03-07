@@ -65,8 +65,8 @@ class FilmBuff
   #   The FilmBuff::Title object containing information on the title
   #
   # @example Basic usage
-  #   movie = imdb_instance.find_by_id('tt0032138')
-  def find_by_id(imdb_id)
+  #   movie = imdb_instance.look_up_id('tt0032138')
+  def look_up_id(imdb_id)
     response = connection.get '/title/maindetails', {
       :tconst => imdb_id, :locale => @locale
     }

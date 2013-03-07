@@ -13,17 +13,17 @@ Film Buff 1.0.x provides two ways to return information on a movie or TV show. F
     require 'filmbuff'
     imdb = FilmBuff.new
 
-### find_by_id
+### look_up_id
 
 If you know the movie or TV show's IMDb ID you can return an object with the IMDb information:
 
-    movie = imdb.find_by_id('tt0032138')
+    movie = imdb.look_up_id('tt0032138')
 
     movie.title => "The Wizard of Oz"
     movie.rating => 8.2
     movie.genres => ["Adventure", Family", "Fantasy", "Musical"]
 
-Accessible information for an object returned by `find_by_id` is:
+Accessible information for an object returned by `look_up_id` is:
 
 - Title
 - Tagline
@@ -127,7 +127,7 @@ Only return popular results related to the title provided:
 To retrieve information in a different language, either pass locale as as keyword argument when setting up an instance of `imdb` or set the instance variable `locale` to your wanted locale once the instance has already been created:
 
     imdb.locale = 'fr_FR'
-    movie = imdb.find_by_id('tt0032138')
+    movie = imdb.look_up_id('tt0032138')
 
     movie.title => "Le magicien d'Oz"
     movie.rating => 8.2

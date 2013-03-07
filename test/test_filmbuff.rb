@@ -10,10 +10,10 @@ describe FilmBuff do
     @imdb = FilmBuff.new
   end
 
-  describe '#find_by_id' do
+  describe '#look_up_id' do
     it 'returns a Title' do
       VCR.use_cassette('The Wizard of Oz by ID') do
-        @title = @imdb.find_by_id('tt0032138')
+        @title = @imdb.look_up_id('tt0032138')
       end
 
       assert_instance_of FilmBuff::Title, @title
@@ -25,7 +25,7 @@ describe FilmBuff do
           @imdb.locale = 'de_DE'
 
           VCR.use_cassette('The Wizard of Oz German') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 
@@ -39,7 +39,7 @@ describe FilmBuff do
           @imdb.locale = 'en_US'
 
           VCR.use_cassette('The Wizard of Oz by ID') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 
@@ -53,7 +53,7 @@ describe FilmBuff do
           @imdb.locale = 'es_ES'
 
           VCR.use_cassette('The Wizard of Oz Spanish') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 
@@ -67,7 +67,7 @@ describe FilmBuff do
           @imdb.locale = 'fr_FR'
 
           VCR.use_cassette('The Wizard of Oz French') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 
@@ -81,7 +81,7 @@ describe FilmBuff do
           @imdb.locale = 'it_IT'
 
           VCR.use_cassette('The Wizard of Oz Italian') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 
@@ -95,7 +95,7 @@ describe FilmBuff do
           @imdb.locale = 'pt_PT'
 
           VCR.use_cassette('The Wizard of Oz Portugese') do
-            @title = @imdb.find_by_id('tt0032138')
+            @title = @imdb.look_up_id('tt0032138')
           end
         end
 

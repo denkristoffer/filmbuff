@@ -7,7 +7,8 @@
     instance with `imdb = FilmBuff.new`
   * Faraday has replaced HTTParty meaning you can use your HTTP adapter of
     choice as well as choose caching and logging
-  * find_by_title now returns an array with results. This breaks
+  * `find_by_id` is now called `look_up_id`
+  * `find_by_title` now returns an array with results. This breaks
     compatability with older versions
 
 * 1 minor enhancement
