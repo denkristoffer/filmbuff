@@ -84,8 +84,7 @@ class FilmBuff
   #   These types will be searched in the provided order. Can be
   #   `title_popular`, `title_exact`, `title_approx`, and `title_substring`
   #
-  # @return [Array<Hash>] An array of hashes, each representing a search
-  #   result
+  # @return [Array<Hash>] An array of hashes, each representing a search result
   #
   # @example Basic usage
   #   movie = imdb_instance.search_for_title('The Wizard of Oz')
@@ -95,7 +94,7 @@ class FilmBuff
   #
   # @example Only return results containing the exact title provided
   #   movie = imdb_instance.search_for_title('The Wizard of Oz',
-  #                                       types: %w(title_exact))
+  #                                          types: %w(title_exact))
   def search_for_title(title, limit: nil, types: %w(title_popular
                                                  title_exact
                                                  title_approx

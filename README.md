@@ -42,7 +42,7 @@ You can also search for a movie or TV show by its title. This will return an arr
 
     results = imdb.search_for_title('The Wizard of Oz')
 
-    results => [
+    results =>  [
                     {
                         :type => "title_popular",
                         :imdb_id => "tt0032138",
@@ -66,7 +66,7 @@ You can also search for a movie or TV show by its title. This will return an arr
 
                     etc.
 
-               ]
+                ]
 
 ### Configuration
 
@@ -92,7 +92,7 @@ Return only 2 results:
 
     results = imdb.search_for_title('The Wizard of Oz', limit: 2)
 
-    results => [
+    results =>  [
                     {
                         :type => "title_popular",
                         :imdb_id => "tt0032138",
@@ -111,9 +111,10 @@ Return only 2 results:
 
 Only return popular results related to the title provided:
 
-    results = imdb.search_for_title('The Wizard of Oz', types: %w(title_popular))
+    result = imdb.search_for_title('The Wizard of Oz',
+                                   types: %w(title_popular))
 
-    results => [
+    result =>   [
                     {
                         :type => "title_popular",
                         :imdb_id => "tt0032138",
