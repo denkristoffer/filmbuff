@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
                   'which is the fastest and easiest way to get information ' <<
                   'from IMDb.'
 
-  s.required_ruby_version = '>= 2.0.0'
+  s.required_ruby_version = '>= 1.9'
 
   s.add_dependency('faraday', '~> 0.8')
   s.add_dependency('faraday_middleware', '~> 0.8')
