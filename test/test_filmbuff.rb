@@ -19,6 +19,16 @@ describe FilmBuff do
       assert_instance_of FilmBuff::Title, @title
     end
 
+    describe 'given a non-existent ID' do
+      it 'throws an exception' do
+        VCR.use_cassette('non-existent ID') do
+          assert_raises(FilmBuff::NotFound) do
+            @title = @imdb.look_up_id('tt9999999')
+          end
+        end
+      end
+    end
+
     describe 'given locale' do
       describe 'de_DE' do
         before do
@@ -116,6 +126,16 @@ describe FilmBuff do
 
       it 'returns an array of titles' do
         assert_instance_of Array, @titles
+      end
+
+      describe 'given a non-existent title' do
+        it 'throws an exception' do
+          VCR.use_cassette('non-existent title') do
+            assert_raises(FilmBuff::NotFound) do
+              @title = @imdb.search_for_title('This title should not exist')
+            end
+          end
+        end
       end
     end
 
