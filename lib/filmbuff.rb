@@ -6,6 +6,8 @@ require 'faraday-http-cache'
 
 # Interacts with IMDb and is used to look up titles
 class FilmBuff
+  class NotFound < StandardError; end
+
   # @return [String] The locale currently used by the IMDb instance
   attr_accessor :locale
 
@@ -71,7 +73,11 @@ class FilmBuff
       :tconst => imdb_id, :locale => @locale
     }
 
-    Title.new(response.body['data'])
+    unless response.status == 200
+      fail NotFound
+    else
+      Title.new(response.body['data'])
+    end
   end
 
   # Searches IMDb for the title provided and returns an array with results
