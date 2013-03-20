@@ -137,6 +137,12 @@ describe FilmBuff do
           end
         end
       end
+
+      describe 'given a title that redirects' do
+        it 'follows the redirect and returns a Title object' do
+          skip 'do this later'
+        end
+      end
     end
 
     describe 'given a limit of 3' do
