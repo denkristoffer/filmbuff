@@ -27,11 +27,11 @@ class FilmBuff
   #
   # @param [Object] logger
   #   An instance of a logger object. Defaults to `nil` and no logging
-  def initialize(locale = 'en_US', ssl: true, cache: nil, logger: nil)
-    @locale = locale
-    @protocol = ssl ? 'https' : 'http'
-    @cache = cache
-    @logger = logger
+  def initialize(options = {})
+    @locale   = options[:locale] || 'en_US'
+    @protocol = options[:ssl] == false ? 'http' : 'https'
+    @cache    = options[:cache]
+    @logger   = options[:logger]
   end
 
   private
@@ -95,15 +95,16 @@ class FilmBuff
   # @example Only return results containing the exact title provided
   #   movie = imdb_instance.search_for_title('The Wizard of Oz',
   #                                          types: %w(title_exact))
-  def search_for_title(title, limit: nil, types: %w(title_popular
-                                                 title_exact
-                                                 title_approx
-                                                 title_substring))
+  def search_for_title(title, options = {})
     response = connection.get 'http://www.imdb.com/xml/find', {
       :q => title,
       :json => '1',
       :tt => 'on'
     }
+
+    limit = options[:limit]
+    types = options[:types] || %w(title_popular title_exact title_approx 
+      title_substring)
 
     output = []
     results = response.body.select { |key| types.include? key }
