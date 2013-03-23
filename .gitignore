@@ -7,3 +7,4 @@ vendor
 .yardoc
 doc
 coverage
+fixtures
