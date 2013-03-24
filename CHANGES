@@ -1,9 +1,14 @@
 === 1.0.0 / 2013-03-10
 
-* 4 major enhancements
+* 1 major enhancement
+
+  * Now requires Ruby 2.0.0 or newer
+
+=== 0.9.0 / 2013-03-10
+
+* 6 major enhancements
 
   * Incompatible with older versions!
-  * Now requires Ruby 2.0.0 or newer
   * Film Buff is no longer a module, but a class. Use it by creating an
     instance with `imdb = FilmBuff.new`
   * Faraday has replaced HTTParty meaning you can use your HTTP adapter of
