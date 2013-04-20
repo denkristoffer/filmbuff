@@ -1,5 +1,7 @@
 # Film Buff - A Ruby wrapper for IMDb's JSON API
 
+[![Build Status](https://travis-ci.org/[sachse]/[filmbuff].png)](https://travis-ci.org/[sachse]/[filmbuff])
+
 ## Description
 
 Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and easiest way to get information from IMDb.
