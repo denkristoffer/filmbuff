@@ -2,7 +2,9 @@
 
 * 1 major enhancement
 
-  * Now requires Ruby 2.0.0 or newer
+  * Now requires Ruby 2.0.0 or newer because of the use of keyword arguments.
+    0.9.x is still maintained for older versions of Ruby - these versions of
+    Film Buff use an options hash instead of keyword arguments.
 
 === 0.9.0 / 2013-03-10
 
