@@ -73,7 +73,7 @@ class FilmBuff
       :tconst => imdb_id, :locale => @locale
     }
 
-    unless response.status == 200
+    if response.status != 200
       fail NotFound
     else
       Title.new(response.body['data'])
