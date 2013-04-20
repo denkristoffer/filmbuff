@@ -1,6 +1,6 @@
 # Film Buff - A Ruby wrapper for IMDb's JSON API
 
-[![Build Status](https://travis-ci.org/[sachse]/[filmbuff].png)](https://travis-ci.org/[sachse]/[filmbuff])
+[![Build Status](https://travis-ci.org/sachse/filmbuff.png)](https://travis-ci.org/sachse/filmbuff)
 
 ## Description
 
