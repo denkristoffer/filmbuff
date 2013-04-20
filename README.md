@@ -1,5 +1,6 @@
 # Film Buff - A Ruby wrapper for IMDb's JSON API
 
+[![Gem Version](https://badge.fury.io/rb/filmbuff.png)](http://rubygems.org/gems/filmbuff)
 [![Build Status](https://travis-ci.org/sachse/filmbuff.png)](https://travis-ci.org/sachse/filmbuff)
 [![Dependency Status](https://gemnasium.com/sachse/filmbuff.png)](https://gemnasium.com/sachse/filmbuff)
 [![Coverage Status](https://coveralls.io/repos/sachse/filmbuff/badge.png?branch=master)](https://coveralls.io/r/sachse/filmbuff)
