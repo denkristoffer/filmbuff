@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/sachse/filmbuff.png)](https://travis-ci.org/sachse/filmbuff)
 [![Dependency Status](https://gemnasium.com/sachse/filmbuff.png)](https://gemnasium.com/sachse/filmbuff)
 [![Coverage Status](https://coveralls.io/repos/sachse/filmbuff/badge.png?branch=master)](https://coveralls.io/r/sachse/filmbuff)
+[![Code Climate](https://codeclimate.com/github/sachse/filmbuff.png)](https://codeclimate.com/github/sachse/filmbuff)
 
 ## Description
 
