@@ -28,7 +28,7 @@ describe FilmBuff::Title do
   end
 
   it 'has a runtime' do
-    assert_equal 6060, @title.runtime
+    assert_equal 6120, @title.runtime
   end
 
   it 'has a rating' do
