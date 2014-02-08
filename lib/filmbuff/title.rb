@@ -41,12 +41,12 @@ class FilmBuff
     def initialize(imdb_hash)
       @imdb_id = imdb_hash['tconst']
       @title = imdb_hash['title']
-      @tagline = imdb_hash['tagline'] if imdb_hash['tagline']
-      @plot = imdb_hash['plot']['outline'] if imdb_hash['plot']
-      @runtime = imdb_hash['runtime']['time'] if imdb_hash['runtime']
+      @tagline &&= imdb_hash['tagline']
+      @plot &&= imdb_hash['plot']['outline']
+      @runtime &&= imdb_hash['runtime']['time']
       @rating = imdb_hash['rating']
       @votes = imdb_hash['num_votes']
-      @poster_url = imdb_hash['image']['url'] if imdb_hash['image']
+      @poster_url &&= imdb_hash['image']['url']
       @genres = imdb_hash['genres'] || []
 
       if imdb_hash['release_date']
