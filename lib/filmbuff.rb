@@ -39,8 +39,8 @@ class FilmBuff
   private
 
   def connection
-    @connection ||= Faraday.new(:url => "#{@protocol}://app.imdb.com") do |c|
-      c.use :http_cache, @cache, :logger => @logger
+    @connection ||= Faraday.new(url: "#{@protocol}://app.imdb.com") do |c|
+      c.use :http_cache, @cache, logger: @logger
       c.response :json
       c.adapter Faraday.default_adapter
     end
@@ -48,10 +48,10 @@ class FilmBuff
 
   def build_hash(type, values)
     {
-      :type => type,
-      :imdb_id => values['id'],
-      :title => values['title'],
-      :release_year => values['description'][/\A\d{4}/]
+      type: type,
+      imdb_id: values['id'],
+      title: values['title'],
+      release_year: values['description'][/\A\d{4}/]
     }
   end
 
@@ -70,7 +70,7 @@ class FilmBuff
   #   movie = imdb_instance.look_up_id('tt0032138')
   def look_up_id(imdb_id)
     response = connection.get '/title/maindetails', {
-      :tconst => imdb_id, :locale => @locale
+      tconst: imdb_id, locale: @locale
     }
 
     if response.status != 200
@@ -106,9 +106,9 @@ class FilmBuff
                                                  title_approx
                                                  title_substring))
     response = connection.get 'http://www.imdb.com/xml/find', {
-      :q => title,
-      :json => '1',
-      :tt => 'on'
+      q: title,
+      json: '1',
+      tt: 'on'
     }
 
     output = []
