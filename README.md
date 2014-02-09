@@ -4,7 +4,7 @@
 
 Film Buff provides a Ruby wrapper for IMDb's JSON API, which is the fastest and easiest way to get information from IMDb.
 
-Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#locales).
+Film Buff supports IMDb's different locales, so information can be retrieved in different languages. See [Locales](#locales) for more information.
 
 ## Usage
 
