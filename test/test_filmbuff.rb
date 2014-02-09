@@ -133,7 +133,7 @@ describe FilmBuff do
         it 'throws an exception' do
           VCR.use_cassette('non-existent title') do
             assert_raises(FilmBuff::NotFound) do
-              @title = @imdb.search_for_title('This title should not exist')
+              @title = @imdb.search_for_title('123456789012345678901234567890')
             end
           end
         end

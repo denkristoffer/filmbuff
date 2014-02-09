@@ -123,6 +123,8 @@ class FilmBuff
       end
     end
 
+    fail NotFound if output.empty?
+
     output
   end
 end
