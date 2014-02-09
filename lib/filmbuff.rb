@@ -46,12 +46,12 @@ class FilmBuff
     end
   end
 
-  def build_hash(type, values)
+  def build_hash(type, value)
     {
       type: type,
-      imdb_id: values['id'],
-      title: values['title'],
-      release_year: values['description'][/\A\d{4}/]
+      imdb_id: value['id'],
+      title: value['title'],
+      release_year: value['description'][/\A\d{4}/]
     }
   end
 
@@ -112,14 +112,14 @@ class FilmBuff
     }
 
     output = []
-    results = response.body.select { |key| types.include? key }
+    results = response.body.select { |type| types.include? type }
 
-    results.each_key do |key|
-      response.body[key].each do |row|
+    results.each_key do |type|
+      response.body[type].each do |hash|
         break unless output.size < limit if limit
-        next unless row['id'] && row['title'] && row['description']
+        next unless hash['id'] && hash['title'] && hash['description']
 
-        output << build_hash(key, row)
+        output << build_hash(type, hash)
       end
     end
 
