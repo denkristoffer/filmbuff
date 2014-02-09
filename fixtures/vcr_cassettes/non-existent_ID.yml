@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.imdb.com/title/maindetails?tconst=tt9999999&locale=en_US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      date:
+      - Sun, 09 Feb 2014 13:09:53 GMT
+      server:
+      - HTTPDaemon
+      x-frame-options:
+      - SAMEORIGIN
+      cache-control:
+      - private
+      content-type:
+      - application/json
+      set-cookie:
+      - uu=BCYoCcD7GBo2y56aIIOS3GGjgR931KBkojfo_FbkZVGc8_VK3meCdGfGRzoRCWSEhN1dk_wfRXxJqphVntDQf8UNh6jod1hNDvzjdoD9eT-FE_z_MxPySxl3ekfU1Ra7OpeU8j8Ppcmxw_NJGqs_E-C4-DeRy_nXZ_yvst5b4Y4zalc;expires=Thu,
+        30 Dec 2037 00:00:00 GMT;path=/;domain=.imdb.com, session-id=155-1951393-4912594;path=/;domain=.imdb.com;expires=Fri,
+        08 Feb 2019 05:09:53 GMT, session-id-time=1549631393;path=/;domain=.imdb.com;expires=Fri,
+        08 Feb 2019 05:09:53 GMT
+      vary:
+      - Accept-Encoding,User-Agent
+      content-length:
+      - '194'
+    body:
+      encoding: UTF-8
+      string: "{\"@meta\":{\"serverTimeMs\":26,\"requestId\":\"0ZA85FGKEH3KEP27AMDG\"},\"db\":{\"h\":\"ioa704\",\"s\":\"badsig\",\"i\":\"2014-02-08\"},\"error\":{\"status\":404,\"code\":\"badtitle\",\"message\":\"No
+        data for this title id.\"},\"@type\":\"mobile.service.error\"}"
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 13:09:54 GMT
+recorded_with: VCR 2.8.0

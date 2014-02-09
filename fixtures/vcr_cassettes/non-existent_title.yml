@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.imdb.com/xml/find?q=123456789012345678901234567890&json=1&tt=on
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sun, 09 Feb 2014 13:09:58 GMT
+      server:
+      - HTTPDaemon
+      x-frame-options:
+      - SAMEORIGIN
+      cache-control:
+      - private
+      content-type:
+      - text/html; charset=iso-8859-1
+      set-cookie:
+      - uu=BCYlPwNtEru5dD0id3ICBMMXt_a0JH5gePwn6aSf5JxMd0s4D5SzdXDjsbwneXUA3oQsBv1STmJcHUsFvsgDz1h1zRKO-8G89cH8mVktQznB72KnVp510YUtysL1qgqKBViT0srMIkZHR6uPxGdNZ4855-HFOuqjp-DEemTxyhmFEjMcEkBP74oT4WUvVpNQd3F7q5lBwXVHRoKnolcmqCpcAwJ0_CRZF3S53wRDDkUmw_TSinTW6MuQLZcViN9LqEq1;expires=Thu,
+        30 Dec 2037 00:00:00 GMT;path=/;domain=.imdb.com, session-id=281-1951398-0106340;path=/;domain=.imdb.com;expires=Fri,
+        08 Feb 2019 05:09:58 GMT, session-id-time=1549631398;path=/;domain=.imdb.com;expires=Fri,
+        08 Feb 2019 05:09:58 GMT
+      p3p:
+      - policyref="http://i.imdb.com/images/p3p.xml",CP="CAO DSP LAW CUR ADM IVAo
+        IVDo CONo OTPo OUR DELi PUBi OTRi BUS PHY ONL UNI PUR FIN COM NAV INT DEM
+        CNT STA HEA PRE LOC GOV OTC "
+      vary:
+      - User-Agent
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |2
+
+        {
+
+        }
+    http_version: 
+  recorded_at: Sun, 09 Feb 2014 13:09:58 GMT
+recorded_with: VCR 2.8.0
