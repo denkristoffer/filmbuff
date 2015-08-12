@@ -50,8 +50,12 @@ class FilmBuff
       @genres = imdb_hash['genres'] || []
 
       if imdb_hash['release_date']
-        @release_date = Date.strptime(imdb_hash['release_date']['normal'],
+        begin
+          @release_date = Date.strptime(imdb_hash['release_date']['normal'],
                                       '%Y-%m-%d')
+        rescue
+          @release_date = imdb_hash['release_date']['normal']
+        end                              
       end
     end
   end
