@@ -5,7 +5,7 @@
 [![Dependency Status](https://gemnasium.com/sachse/filmbuff.png)](https://gemnasium.com/sachse/filmbuff)
 [![Code Climate](https://codeclimate.com/github/sachse/filmbuff.png)](https://codeclimate.com/github/sachse/filmbuff)
 [![Coverage Status](https://coveralls.io/repos/sachse/filmbuff/badge.png?branch=master)](https://coveralls.io/r/sachse/filmbuff)
-[![Inline docs](https://inch-ci.org/github/sachse/filmbuff.svg?branch=master")](https://inch-ci.org/github/sachse/filmbuff/)
+[![Inline docs](https://inch-ci.org/github/sachse/filmbuff.svg?branch=master)](https://inch-ci.org/github/sachse/filmbuff/)
 
 ## Description
 
