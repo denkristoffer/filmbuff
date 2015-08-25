@@ -50,4 +50,16 @@ describe FilmBuff::Title do
   it 'has a release date' do
     assert_equal Date.strptime('1939-08-25', '%Y-%m-%d'), @title.release_date
   end
+
+  describe 'when looking up titles without a specific release date' do
+    before do
+      VCR.use_cassette('Rear Window by ID') do
+        @title = @imdb.look_up_id('tt0047396')
+      end
+    end
+
+    it 'falls back to the IMDb provided date' do
+      assert_equal '1954', @title.release_date
+    end
+  end
 end
