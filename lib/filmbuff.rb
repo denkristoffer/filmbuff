@@ -87,8 +87,7 @@ class FilmBuff
                                                  title_substring))
     response = JSON.parse(HTTP.get('http://www.imdb.com/xml/find', params: {
       q: title,
-      json: '1',
-      tt: 'on'
+      json: '1'
     }).to_s)
 
     output = []
