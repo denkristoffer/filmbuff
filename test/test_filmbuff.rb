@@ -138,11 +138,17 @@ describe FilmBuff do
         end
       end
 
-      describe 'given a title that redirects' do
-        it 'follows the redirect and returns a Title object' do
-          skip 'do this later'
-        end
-      end
+      # describe 'given a title that redirects' do
+      #   it 'follows the redirect and returns a Title object' do
+      #     skip 'this still needs a title to test against'
+
+      #     VCR.use_cassette('Redirecting title') do
+      #       @title = @imdb.search_for_title('')
+      #     end
+
+      #     assert_instance_of FilmBuff::Title, @title
+      #   end
+      # end
     end
 
     describe 'given a limit of 3' do
