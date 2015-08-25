@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.description = 'Film Buff provides a Ruby wrapper for IMDb\'s JSON API, ' <<
                   'which is the fastest and easiest way to get information ' <<
                   'from IMDb.'
+  s.license     = 'MIT'
 
   s.required_ruby_version = '>= 2.0.0'
 
