@@ -52,10 +52,10 @@ class FilmBuff
       if imdb_hash['release_date']
         begin
           @release_date = Date.strptime(imdb_hash['release_date']['normal'],
-                                      '%Y-%m-%d')
+                                        '%Y-%m-%d')
         rescue
           @release_date = imdb_hash['release_date']['normal']
-        end                              
+        end
       end
     end
   end
