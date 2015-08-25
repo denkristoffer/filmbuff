@@ -49,7 +49,7 @@ class FilmBuff
   # @example Basic usage
   #   movie = imdb_instance.look_up_id('tt0032138')
   def look_up_id(imdb_id)
-    response = HTTP.accept(:json).get("#{@protocol}://app.imdb.com/title/maindetails", params: {
+    response = HTTP.get("#{@protocol}://app.imdb.com/title/maindetails", params: {
       tconst: imdb_id, locale: @locale
     })
 
