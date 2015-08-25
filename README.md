@@ -1,10 +1,9 @@
 # Film Buff - A Ruby wrapper for IMDb's JSON API
 
-[![Gem Version](https://badge.fury.io/rb/filmbuff.png)](http://rubygems.org/gems/filmbuff)
-[![Build Status](https://travis-ci.org/sachse/filmbuff.png)](https://travis-ci.org/sachse/filmbuff)
-[![Dependency Status](https://gemnasium.com/sachse/filmbuff.png)](https://gemnasium.com/sachse/filmbuff)
-[![Code Climate](https://codeclimate.com/github/sachse/filmbuff.png)](https://codeclimate.com/github/sachse/filmbuff)
-[![Coverage Status](https://coveralls.io/repos/sachse/filmbuff/badge.png?branch=master)](https://coveralls.io/r/sachse/filmbuff)
+[![Gem Version](https://img.shields.io/gem/v/filmbuff.svg)](https://rubygems.org/gems/filmbuff)
+[![Build Status](https://img.shields.io/travis/sachse/filmbuff.svg)](https://travis-ci.org/sachse/filmbuff)
+[![Dependency Status](https://img.shields.io/gemnasium/sachse/filmbuff.svg)](https://gemnasium.com/sachse/filmbuff)
+[![Coverage Status](https://img.shields.io/coveralls/sachse/filmbuff/master.svg)](https://coveralls.io/r/sachse/filmbuff)
 [![Inline docs](https://inch-ci.org/github/sachse/filmbuff.svg?branch=master)](https://inch-ci.org/github/sachse/filmbuff/)
 
 ## Description
