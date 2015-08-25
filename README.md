@@ -74,8 +74,6 @@ When initializing a new `FilmBuff` instance keyword arguments can passed to chan
 
 - SSL is used by default when communicating with IMDb but it can be turned off by setting `ssl` to false.
 - Locale defaults to `en_US` but this behaviour can be changed by passing `locale` with a different value. Locale can also be changed as necessary during runtime. See [Locales](#locales) for more information.
-- Caching is possible through [Faraday Http Cache](https://github.com/plataformatec/faraday-http-cache). It can be enabled by setting `cache` to an object such as `Rails.cache` or by passing it a hash that will be used to configure the cache store, such as `:mem_cache_store, 'localhost:11211'`
-- Logging can be enabled by setting `logger` to a logging object.
 
 `search_for_title` also takes keyword arguments that can be used to change the default behaviours on a per search basis.
 

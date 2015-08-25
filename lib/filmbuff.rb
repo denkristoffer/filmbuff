@@ -1,8 +1,7 @@
 require 'filmbuff/title'
 
-require 'faraday'
-require 'faraday_middleware'
-require 'faraday-http-cache'
+require 'http'
+require 'json'
 
 # Interacts with IMDb and is used to look up titles
 class FilmBuff
@@ -20,31 +19,12 @@ class FilmBuff
   # @param [Boolean] ssl
   #   Whether or not to use SSL when searching by IMDb ID (IMDb does not
   #   currently support SSL when searching by title). Defaults to `true`
-  #
-  # @param [Object, Hash, nil] cache
-  #   Whatever Faraday-http-cache should use for caching. Can be both an
-  #    object such as `Rails.cache`, a hash like
-  #   `:mem_cache_store, 'localhost:11211'`, or `nil`, meaning no caching.
-  #   Defaults to `nil`
-  #
-  # @param [Object] logger
-  #   An instance of a logger object. Defaults to `nil` and no logging
-  def initialize(locale = 'en_US', ssl: true, cache: nil, logger: nil)
+  def initialize(locale = 'en_US', ssl: true)
     @locale = locale
     @protocol = ssl ? 'https' : 'http'
-    @cache = cache
-    @logger = logger
   end
 
   private
-
-  def connection
-    @connection ||= Faraday.new(url: "#{@protocol}://app.imdb.com") do |c|
-      c.use :http_cache, @cache, logger: @logger
-      c.response :json
-      c.adapter Faraday.default_adapter
-    end
-  end
 
   def build_hash(type, value)
     {
@@ -69,14 +49,14 @@ class FilmBuff
   # @example Basic usage
   #   movie = imdb_instance.look_up_id('tt0032138')
   def look_up_id(imdb_id)
-    response = connection.get '/title/maindetails', {
+    response = HTTP.accept(:json).get("#{@protocol}://app.imdb.com/title/maindetails", params: {
       tconst: imdb_id, locale: @locale
-    }
+    })
 
     if response.status != 200
       fail NotFound
     else
-      Title.new(response.body['data'])
+      Title.new(response.parse['data'])
     end
   end
 
@@ -105,17 +85,17 @@ class FilmBuff
                                                  title_exact
                                                  title_approx
                                                  title_substring))
-    response = connection.get 'http://www.imdb.com/xml/find', {
+    response = JSON.parse(HTTP.get('http://www.imdb.com/xml/find', params: {
       q: title,
       json: '1',
       tt: 'on'
-    }
+    }).to_s)
 
     output = []
-    results = response.body.select { |type| types.include? type }
+    results = response.select { |type| types.include? type }
 
     results.each_key do |type|
-      response.body[type].each do |hash|
+      response[type].each do |hash|
         break unless output.size < limit if limit
         next unless hash['id'] && hash['title'] && hash['description']
 
