@@ -31,7 +31,8 @@ class FilmBuff
     # @return [Array<String>] The genres of Title
     attr_reader :genres
 
-    # @return [Date] The release date of Title
+    # @return [Date, String] The release date of Title. Returns a Date when
+    #   possible, otherwise a String
     attr_reader :release_date
 
     # Create a new Title instance from an IMDb hash
