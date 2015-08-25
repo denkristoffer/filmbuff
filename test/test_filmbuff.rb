@@ -40,8 +40,7 @@ describe FilmBuff do
         end
 
         it 'returns German information' do
-          skip 'the assertion below until IMDb gets its information in order'
-          assert_equal 'Das zauberhafte Land', @title.title
+          assert_equal 'Der Zauberer von Oz', @title.title
         end
       end
 
