@@ -151,7 +151,7 @@ Supported locales are
 - [Public git repository](https://github.com/sachse/filmbuff)
 - [Online documentation](http://rubydoc.info/gems/filmbuff/frames)
 - [Issue tracker](https://github.com/sachse/filmbuff/issues)
-- [Film Buff on RubyGems](http://rubygems.org/gems/filmbuff)
+- [Film Buff on RubyGems](https://rubygems.org/gems/filmbuff)
 
 ## Authors
 
